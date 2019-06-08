@@ -1,5 +1,5 @@
 
-package com.almasb.main;
+package com.almasb.logica;
 
 
 import javafx.application.Application;

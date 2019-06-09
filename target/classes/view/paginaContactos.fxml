@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.almasb.controladores.PaginaContactosController">
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.almasb.controladores.PaginaContactosController">
    <children>
       <VBox layoutX="16.0" layoutY="28.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -41,7 +41,7 @@
                <children>
                   <ScrollPane prefHeight="839.0" prefWidth="357.0">
                      <content>
-                        <TableView editable="true" prefHeight="939.0" prefWidth="335.0">
+                        <TableView editable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0">
                           <columns>
                             <TableColumn editable="false" prefWidth="151.0" text="Nombre" />
                             <TableColumn editable="false" minWidth="0.0" prefWidth="183.0" text="Apellido" />

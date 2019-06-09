@@ -12,9 +12,8 @@ public class FXApp extends Application {
     public void start(Stage stage) throws Exception{
 
         Parent root = FXMLLoader.load(getClass().getResource("/view/PaginaContactos.fxml"));
-        //loader.setLocation(getClass().getResource("../IGU/paginaContactos.fxml"));
         Scene escenario = new Scene(root);
-
+        stage.setTitle("ventana");
         stage.setScene(escenario);
         stage.show();
 

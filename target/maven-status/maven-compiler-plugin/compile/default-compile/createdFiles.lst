@@ -1,1 +1,2 @@
-com\almasb\main\FXApp.class
+com\almasb\logica\FXApp.class
+com\almasb\controladores\PaginaContactosController.class

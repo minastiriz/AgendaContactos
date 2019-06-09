@@ -1,3 +1,4 @@
 com\almasb\controladores\GruposController.class
 com\almasb\logica\FXApp.class
 com\almasb\controladores\PaginaContactosController.class
+com\almasb\IGU\Grupos.class

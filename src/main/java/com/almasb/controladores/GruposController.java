@@ -9,6 +9,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.List;
@@ -16,7 +18,7 @@ import java.util.ResourceBundle;
 
 public class GruposController implements Initializable {
 
-    //FALTA
+    //FALTA metodo volver a la pagina anterior
 
     // Acceso al modelo ficticio
     Grupos modeloGrupos = new Grupos();
@@ -40,7 +42,7 @@ public class GruposController implements Initializable {
     private JFXButton botonVolver;
 
     @FXML
-    void borrarGrupo(ActionEvent event) {
+    void borrarGrupo(MouseEvent event) {
         //Hace referencia al boton de borrar, borrará un grupo seleccionado en el box
 
         System.out.println("El usuario ha presionado el botón para borrar el grupo "+gruposBox.getValue());
@@ -52,7 +54,7 @@ public class GruposController implements Initializable {
     }
 
     @FXML
-    void crearGrupo(ActionEvent event) {
+    void crearGrupo(MouseEvent event) {
         //Hace referencia al boton de crear, creará un grupo con el nombre en el txtfield
 
         System.out.println("El usuario ha presionado el botón para crear un grupo con nombre "+txtCrearGrupo.getText());
@@ -64,7 +66,7 @@ public class GruposController implements Initializable {
     }
 
     @FXML
-    void editarGrupo(ActionEvent event) {
+    void editarGrupo(MouseEvent event) {
         //Hace referencia al boton modificar, llevará a una ventana en la que podrá cambiar el nombre al grupo seleccionado en el box
 
         System.out.println("El usuario ha decidido editar el grupo "+gruposBox.getValue());
@@ -74,13 +76,10 @@ public class GruposController implements Initializable {
     }
 
     @FXML
-    void volverAnterior(ActionEvent event) {
+    void volverAnterior(MouseEvent event) {
         //Hace referencia al botón volver, llevará a la ventana anterior en la que se encontraba el usuario
-
-
-
-
-
+        Stage stage = (Stage) botonVolver.getScene().getWindow();
+        stage.close();
     }
 
     private ObservableList<String> getItemsBox(){
@@ -90,7 +89,6 @@ public class GruposController implements Initializable {
         return itemsBox;
     }
 
-    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //Al iniciar la vista se cargaran los datos de la base de datos para el combobox con todos los grupos creados
         gruposBox.setItems(getItemsBox());

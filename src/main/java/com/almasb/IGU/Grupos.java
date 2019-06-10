@@ -11,7 +11,7 @@ public class Grupos {
         // Servirá para poder listarlos en la app
         // Devolverá siempre una lista (deberá siempre tener los 3 básicos mostrados en el ejemplo)
 
-        ArrayList<String> lista = new ArrayList<>();
+        ArrayList<String> lista = new ArrayList<String>();
         lista.add("Familia");
         lista.add("Amigos");
         lista.add("Trabajo");

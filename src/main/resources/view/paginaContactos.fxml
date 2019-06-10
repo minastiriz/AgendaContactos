@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.Cursor?>
 <AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.almasb.controladores.PaginaContactosController">
    <children>
       <VBox layoutX="16.0" layoutY="28.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -19,18 +20,30 @@
                <children>
                   <HBox spacing="10.0">
                      <children>
-                        <JFXButton text="Buscar contacto" />
-                        <JFXComboBox prefHeight="25.0" prefWidth="170.0" promptText="Tipo busqueda" />
-                        <JFXTextField prefHeight="25.0" prefWidth="225.0" />
+                        <JFXButton fx:id="btnBuscarContacto" onMouseClicked="#buscarContacto" text="Buscar contacto" />
+                        <JFXComboBox  fx:id="tipoBusqueda" prefHeight="25.0" prefWidth="170.0" promptText="Tipo busqueda" />
+                        <JFXTextField fx:id="busqueda" prefHeight="25.0" prefWidth="225.0" />
                      </children>
                   </HBox>
                   <HBox spacing="30.0">
-                     <children>
-                        <JFXButton onMouseClicked="#pulsarAnadirContacto" text="Crear contacto" />
-                        <JFXButton text="Editar contacto" />
-                        <JFXButton text="Grupos" />
-                        <JFXButton text="Configuración" />
-                     </children>
+                      <children>
+                          <JFXButton fx:id="btnCrearContacto" onMouseClicked="#crearContacto" text="Crear contacto">
+                              <cursor>
+                                  <Cursor fx:constant="HAND" />
+                              </cursor></JFXButton>
+                          <JFXButton fx:id="btnEditarContacto" onMouseClicked="#editarContacto" text="Editar contacto">
+                              <cursor>
+                                  <Cursor fx:constant="HAND" />
+                              </cursor></JFXButton>
+                          <JFXButton fx:id="btnGrupos" onMouseClicked="#gestionarGrupos" text="Grupos">
+                              <cursor>
+                                  <Cursor fx:constant="HAND" />
+                              </cursor></JFXButton>
+                          <JFXButton fx:id="btnConfiguracion" onMouseClicked="#config" text="Configuración">
+                              <cursor>
+                                  <Cursor fx:constant="HAND" />
+                              </cursor></JFXButton>
+                      </children>
                   </HBox>
                </children>
                <VBox.margin>
@@ -41,7 +54,7 @@
                <children>
                   <ScrollPane prefHeight="839.0" prefWidth="357.0">
                      <content>
-                        <TableView editable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0">
+                        <TableView fx:id="tablaContactos" editable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" >
                           <columns>
                             <TableColumn editable="false" prefWidth="151.0" text="Nombre" />
                             <TableColumn editable="false" minWidth="0.0" prefWidth="183.0" text="Apellido" />
@@ -49,19 +62,19 @@
                         </TableView>
                      </content>
                   </ScrollPane>
-                  <TableView prefHeight="429.0" prefWidth="294.0">
+                  <TableView fx:id="tablaTelefonos" prefHeight="429.0" prefWidth="294.0" >
                     <columns>
                       <TableColumn prefWidth="143.0" text="Etiqueta" />
                       <TableColumn editable="false" prefWidth="150.0" text="Número de teléfono" />
                     </columns>
                   </TableView>
-                  <TableView editable="true" prefHeight="429.0" prefWidth="248.0">
+                  <TableView fx:id="tablaEmails" editable="true" prefHeight="429.0" prefWidth="248.0" >
                     <columns>
                       <TableColumn editable="false" prefWidth="109.0" text="Etiqueta" />
                       <TableColumn editable="false" prefWidth="138.0" text="E-mail" />
                     </columns>
                   </TableView>
-                  <TableView editable="true" prefHeight="839.0" prefWidth="240.0">
+                  <TableView fx:id="tablaGrupos" editable="true" prefHeight="839.0" prefWidth="240.0" >
                     <columns>
                       <TableColumn editable="false" prefWidth="239.0" text="Grupos" />
                     </columns>

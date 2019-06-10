@@ -1,4 +1,7 @@
+com\almasb\IGU\Telefono.class
 com\almasb\controladores\GruposController.class
 com\almasb\logica\FXApp.class
 com\almasb\controladores\PaginaContactosController.class
 com\almasb\IGU\Grupos.class
+com\almasb\IGU\Contacto.class
+com\almasb\IGU\Email.class

@@ -4,6 +4,7 @@
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -11,7 +12,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<?import javafx.scene.Cursor?>
 <AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.almasb.controladores.PaginaContactosController">
    <children>
       <VBox layoutX="16.0" layoutY="28.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -20,9 +20,9 @@
                <children>
                   <HBox spacing="10.0">
                      <children>
-                        <JFXButton fx:id="btnBuscarContacto" onMouseClicked="#buscarContacto" text="Buscar contacto" />
-                        <JFXComboBox  fx:id="tipoBusqueda" prefHeight="25.0" prefWidth="170.0" promptText="Tipo busqueda" />
+                        <JFXComboBox fx:id="tipoBusqueda" prefHeight="25.0" prefWidth="170.0" promptText="Tipo busqueda" />
                         <JFXTextField fx:id="busqueda" prefHeight="25.0" prefWidth="225.0" />
+                        <JFXButton fx:id="btnBuscarContacto" onMouseClicked="#buscarContacto" text="Buscar contacto" />
                      </children>
                   </HBox>
                   <HBox spacing="30.0">
@@ -54,29 +54,29 @@
                <children>
                   <ScrollPane prefHeight="839.0" prefWidth="357.0">
                      <content>
-                        <TableView fx:id="tablaContactos" editable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" >
+                        <TableView fx:id="tablaContactos" editable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#contactoElegido" prefHeight="700.0" prefWidth="1200.0">
                           <columns>
-                            <TableColumn editable="false" prefWidth="151.0" text="Nombre" />
-                            <TableColumn editable="false" minWidth="0.0" prefWidth="183.0" text="Apellido" />
+                            <TableColumn fx:id="nombreColumna" editable="false" prefWidth="151.0" text="Nombre" />
+                            <TableColumn fx:id="apellidoColumna" editable="false" minWidth="0.0" prefWidth="183.0" text="Apellido" />
                           </columns>
                         </TableView>
                      </content>
                   </ScrollPane>
-                  <TableView fx:id="tablaTelefonos" prefHeight="429.0" prefWidth="294.0" >
+                  <TableView fx:id="tablaTelefonos" prefHeight="429.0" prefWidth="294.0">
                     <columns>
-                      <TableColumn prefWidth="143.0" text="Etiqueta" />
-                      <TableColumn editable="false" prefWidth="150.0" text="Número de teléfono" />
+                      <TableColumn fx:id="etiquetaTelefonoColummna" prefWidth="143.0" text="Etiqueta" />
+                      <TableColumn fx:id="numeroColumna" editable="false" prefWidth="150.0" text="Número de teléfono" />
                     </columns>
                   </TableView>
-                  <TableView fx:id="tablaEmails" editable="true" prefHeight="429.0" prefWidth="248.0" >
+                  <TableView fx:id="tablaEmails" editable="true" prefHeight="429.0" prefWidth="248.0">
                     <columns>
-                      <TableColumn editable="false" prefWidth="109.0" text="Etiqueta" />
-                      <TableColumn editable="false" prefWidth="138.0" text="E-mail" />
+                      <TableColumn fx:id="etiquetaCorreoColummna" editable="false" prefWidth="109.0" text="Etiqueta" />
+                      <TableColumn fx:id="correoColumna" editable="false" prefWidth="138.0" text="E-mail" />
                     </columns>
                   </TableView>
-                  <TableView fx:id="tablaGrupos" editable="true" prefHeight="839.0" prefWidth="240.0" >
+                  <TableView fx:id="tablaGrupos" editable="true" prefHeight="839.0" prefWidth="240.0">
                     <columns>
-                      <TableColumn editable="false" prefWidth="239.0" text="Grupos" />
+                      <TableColumn fx:id="nombreGruposColumna" editable="false" prefWidth="239.0" text="Grupos" />
                     </columns>
                   </TableView>
                </children>

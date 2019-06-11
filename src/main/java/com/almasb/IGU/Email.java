@@ -5,13 +5,16 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Email {
 
     private IntegerProperty id;
 
     private  StringProperty correo;
 
-    private  StringProperty etiqueta;
+    private  StringProperty etiquetaEmail;
 
     public Email(){
 
@@ -20,7 +23,7 @@ public class Email {
     public Email(int id, String correo, String etiqueta){
         this.id= new SimpleIntegerProperty(id);
         this.correo= new SimpleStringProperty(correo);
-        this.etiqueta= new SimpleStringProperty(etiqueta);
+        this.etiquetaEmail= new SimpleStringProperty(etiqueta);
     }
 
     public int getId() {
@@ -50,19 +53,27 @@ public class Email {
 
 
 
-    public String getEtiqueta() {
-        return etiqueta.get();
+    public String getEtiquetaEmail() {
+        return etiquetaEmail.get();
     }
 
-    public void setEtiqueta(String etiqueta) {
-        this.etiqueta.set(etiqueta);
+    public void setEtiquetaEmail(String etiqueta) {
+        this.etiquetaEmail.set(etiqueta);
     }
 
-    public StringProperty etiquetaProperty() {
-        return etiqueta;
+    public StringProperty etiquetaEmailProperty() {
+        return etiquetaEmail;
     }
 
 
+    public  static ArrayList<Email> getEmailsContacto(int id) {
+        ArrayList<Email> lista =new ArrayList<>();
+        Email email = new Email(1,"boqweiybcf@test.es","uji");
+        Email email2 = new Email(2, "boqweiybcf@test.es", "trabajo");
+        lista.add(email);
+        lista.add(email2);
+        return lista;
+    }
 
 
 

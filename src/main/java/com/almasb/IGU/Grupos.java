@@ -1,40 +1,66 @@
 package com.almasb.IGU;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Grupos {
 
+    private StringProperty nombre;
+
+    public Grupos (String nombre){
+        this.nombre = new SimpleStringProperty(nombre);
+    }
+
+    public Grupos (){
+
+    }
+
+    public static List<Grupos> getGruposContacto(int id) {
+        Grupos g1 = new Grupos("Tolai" );
+        return new ArrayList<Grupos>();
+    }
+
+
+    public void setNombre(String nombre){ this.nombre.set(nombre); }
+
+    public StringProperty nombreProperty(){return nombre; }
+
+    public String getNombre() { return nombre.get(); }
+
+
 
     public List<String> getGrupos(){
         // Método que recoge un listado de todos los grupos creados hasta el momento
         // Servirá para poder listarlos en la app
-        // Devolverá siempre una lista (deberá siempre tener los 3 básicos mostrados en el ejemplo)
+        // Devolverá siempre una lista
 
-        ArrayList<String> lista = new ArrayList<String>();
-        lista.add("Familia");
-        lista.add("Amigos");
-        lista.add("Trabajo");
-        return lista;
+        ArrayList<String> grupos = new ArrayList<>();
+        grupos.add("Familia");
+        grupos.add("Amigos");
+        grupos.add("Trabajo");
+        return grupos;
     }
 
-    public void borrarGrupo(String nombre){
+    public boolean borrarGrupo(String nombre){
         // Método para borrar un grupo, el cual pasan su nombre como parámetro.
+        // Devuelve boolean dependiendo si se borró correctamente o no
+        return true;
     }
 
     public boolean crearGrupo(String nombre){
         // Método para crear un grupo, el cual pasan su nombre como parámetro.
         // Devuelve true si se creó correctamente
-        // Devuelve false si NO se creó
-
+        // Devuelve false si NO se creó (Nombre existente o similares)
         return true;
     }
 
     public boolean editarGrupo(String viejoNombre, String nuevoNombre){
         // Método para editar un grupo, el cual pasan su ANTIGUO nombre y su NUEVO nombre como parámetro.
         // Devuelve true si se editó correctamente
-        // Devuelve false si NO se editó
-
+        // Devuelve false si NO se editó (Nombre existente o similares)
         return true;
     }
 

@@ -5,13 +5,16 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Telefono {
 
     private  IntegerProperty id;
 
     private  IntegerProperty numero;
 
-    private  StringProperty etiqueta;
+    private  StringProperty etiquetaTelefono;
 
     public Telefono(){
 
@@ -20,8 +23,9 @@ public class Telefono {
     public Telefono(int id, int numero, String etiqueta){
         this.id= new SimpleIntegerProperty(id);
         this.numero= new SimpleIntegerProperty(numero);
-        this.etiqueta= new SimpleStringProperty(etiqueta);
+        this.etiquetaTelefono= new SimpleStringProperty(etiqueta);
     }
+
 
     public int getId() {
         return id.get();
@@ -50,21 +54,29 @@ public class Telefono {
 
 
 
-    public String getEtiqueta() {
-        return etiqueta.get();
+    public String getEtiquetaTelefono() {
+        return etiquetaTelefono.get();
     }
 
-    public void setEtiqueta(String etiqueta) {
-        this.etiqueta.set(etiqueta);
+    public void setEtiquetaTelefono(String etiqueta) {
+        this.etiquetaTelefono.set(etiqueta);
     }
 
-    public StringProperty etiquetaProperty() {
-        return etiqueta;
+    public StringProperty etiquetaTelefonoProperty() {
+        return etiquetaTelefono;
     }
 
 
 
+    public  static ArrayList<Telefono> getTelefonosContacto(int id){
 
+        ArrayList<Telefono> lista =new ArrayList<>();
+        Telefono telefono1 = new Telefono(1,567890,"casa");
+        Telefono telefono = new Telefono(2, 45678, "trabajo");
+        lista.add(telefono1);
+        lista.add(telefono);
+        return lista;
+    }
 
 }
 

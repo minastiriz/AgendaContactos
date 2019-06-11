@@ -6,12 +6,17 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -19,6 +24,7 @@ import java.util.ResourceBundle;
 public class GruposController implements Initializable {
 
     //FALTA metodo volver a la pagina anterior
+    GruposController gruposController;
 
     // Acceso al modelo ficticio
     Grupos modeloGrupos = new Grupos();
@@ -44,35 +50,82 @@ public class GruposController implements Initializable {
     @FXML
     void borrarGrupo(MouseEvent event) {
         //Hace referencia al boton de borrar, borrará un grupo seleccionado en el box
-
-        System.out.println("El usuario ha presionado el botón para borrar el grupo "+gruposBox.getValue());
-
-        modeloGrupos.borrarGrupo(gruposBox.getValue());
-
-        //GESTION PARA BORRARLO DEL COMBOBOX
-        gruposBox.setItems(getItemsBox());
+        boolean borrado = modeloGrupos.borrarGrupo(gruposBox.getValue());
+        if(borrado && gruposBox.getItems().indexOf(gruposBox.getValue()) >= 0){
+            //GESTION PARA BORRARLO
+            gruposBox.getItems().remove(gruposBox.getValue());
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Grupo borrado");
+            alert.setHeaderText("El grupo fue borrado correctamente");
+            alert.showAndWait();
+        }else{
+            // NO SE PUDO BORRAR, MENSAJE DE ERROR
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error al borrar grupo");
+            alert.setHeaderText("Hubo un problema al intentar borrar el grupo");
+            alert.showAndWait();
+        }
     }
 
     @FXML
     void crearGrupo(MouseEvent event) {
         //Hace referencia al boton de crear, creará un grupo con el nombre en el txtfield
-
-        System.out.println("El usuario ha presionado el botón para crear un grupo con nombre "+txtCrearGrupo.getText());
-
-        modeloGrupos.crearGrupo(txtCrearGrupo.getText());
-
-        //GESTION PARA AÑADIRLO AL COMBOBOX
-        gruposBox.setItems(getItemsBox());
+        boolean res = modeloGrupos.crearGrupo(txtCrearGrupo.getText());
+        if(res){
+            gruposBox.getItems().add(txtCrearGrupo.getText());
+            txtCrearGrupo.setText("");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Grupo creado");
+            alert.setHeaderText("El grupo se creó correctamente");
+            alert.showAndWait();
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error al crear");
+            alert.setHeaderText("El grupo no se pudo crear");
+            alert.showAndWait();
+        }
     }
 
     @FXML
-    void editarGrupo(MouseEvent event) {
+    void editarGrupo(MouseEvent event) throws IOException {
         //Hace referencia al boton modificar, llevará a una ventana en la que podrá cambiar el nombre al grupo seleccionado en el box
+        if(gruposBox.getItems().indexOf(gruposBox.getValue()) >= 0){
+            Stage stageEdit = new Stage();
+            FXMLLoader loader = new FXMLLoader();
+            AnchorPane root = (AnchorPane) loader.load(getClass().getResource("/view/modificarGrupo.fxml").openStream());
+            EditGrupoController editController = (EditGrupoController) loader.getController();
+            editController.recibeNombre(gruposController, gruposBox.getValue());
+            Scene escenario = new Scene(root);
+            stageEdit.setTitle("Editar Grupo");
+            stageEdit.setScene(escenario);
+            stageEdit.initModality(Modality.APPLICATION_MODAL);
+            stageEdit.show();
+        } else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error al modificar");
+            alert.setHeaderText("El grupo seleccionado no puede ser modificado");
+            alert.showAndWait();
+        }
 
-        System.out.println("El usuario ha decidido editar el grupo "+gruposBox.getValue());
+    }
 
-        // Abrir una ventana nueva
-
+    @FXML
+    public void realizaModificacion(String nombre){
+        // Este metodo recibe el nombre modificado de parte de la vista de modificacion
+        boolean res = modeloGrupos.editarGrupo(gruposBox.getValue(), nombre);
+        if(res){
+            gruposBox.getItems().set(gruposBox.getItems().indexOf(gruposBox.getValue()), nombre);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Grupo modificado");
+            alert.setHeaderText("El grupo fue modificado correctamente");
+            alert.showAndWait();
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error al modificar");
+            alert.setHeaderText("Hubo un problema al intentar modificar el grupo");
+            alert.showAndWait();
+        }
+        gruposBox.getSelectionModel().select(0);
     }
 
     @FXML
@@ -82,6 +135,7 @@ public class GruposController implements Initializable {
         stage.close();
     }
 
+    @FXML
     private ObservableList<String> getItemsBox(){
         // Este metodo permitirá comunicar al controlador con el modelo para recoger los datos de los grupos
         List<String> nombresGrupos = modeloGrupos.getGrupos();
@@ -89,9 +143,11 @@ public class GruposController implements Initializable {
         return itemsBox;
     }
 
+    @FXML
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //Al iniciar la vista se cargaran los datos de la base de datos para el combobox con todos los grupos creados
         gruposBox.setItems(getItemsBox());
         gruposBox.getSelectionModel().select(0);
+        gruposController = this;
     }
 }

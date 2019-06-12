@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 
@@ -229,7 +230,7 @@ public class CrearContactoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ArrayList<String> listaGrupos= gruposDao.getGrupos();
+        List<String> listaGrupos= gruposDao.getGrupos();
         ObservableList<String> listaGruposEncapsulados = FXCollections.observableArrayList(listaGrupos);
         this.comboBGrupos.setItems(listaGruposEncapsulados);
         initListas();

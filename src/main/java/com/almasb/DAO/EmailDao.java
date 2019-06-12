@@ -39,4 +39,9 @@ public class EmailDao {
         // Devolverá un boolean indicando si la modificación se completó correctamente.
         return true;
     }
+
+    public boolean existeCorreo(String text) {
+        return false;
+
+    }
 }

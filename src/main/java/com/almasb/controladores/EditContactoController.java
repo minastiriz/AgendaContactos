@@ -27,8 +27,8 @@ public class EditContactoController {
 
     private Stage ventanaPrincipal;
     private Contacto contacto;
-    private DaoEmail mailDao = new DaoEmail();
-    private DaoGrupo grupoDao = new DaoGrupo();
+    private EmailDao mailDao = new EmailDao();
+    private GruposDao grupoDao = new GruposDao();
     private TelefonosDao telefonosDao = new TelefonosDao();
     private ContactosDao contactosDao = new ContactosDao();
 

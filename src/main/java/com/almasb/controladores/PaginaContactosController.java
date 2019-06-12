@@ -1,5 +1,7 @@
 package com.almasb.controladores;
 
+import com.almasb.DAO.ContactosDao;
+import com.almasb.DAO.TelefonosDao;
 import com.almasb.IGU.*;
 import com.almasb.logica.FXApp;
 import com.jfoenix.controls.JFXButton;
@@ -8,16 +10,12 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
+
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -28,14 +26,15 @@ public class PaginaContactosController implements Initializable {
 
     private FXApp mainApp;
     private Contacto contacto;
-    private DaoGrupo grupoDao = new DaoGrupo();
-    private DaoEmail mailDao = new DaoEmail();
+
+    private ContactosDao contactosDao = new ContactosDao();
+    private TelefonosDao telefonosDao = new TelefonosDao();
+
 
     public void setMainApp(FXApp mainApp){
         this.mainApp=mainApp;
     }
-    public void setGrupoDao (DaoGrupo daoGrupo){ this.grupoDao = daoGrupo; }
-    public void setMailDao (DaoEmail daoMail) { this.mailDao = daoMail; }
+
 
     @FXML
     private TableView<Contacto> tablaContactos;
@@ -135,15 +134,6 @@ public class PaginaContactosController implements Initializable {
 
         mainApp.mostrarVentanaGrupos();
 
-        // Método que llevará a la página de grupos
-        /*FXMLLoader loader = new FXMLLoader();
-        Parent grp = loader.load(getClass().getResource("/view/grupos.fxml"));
-        Scene escena = new Scene(grp);
-        mainApp.setScene(escena);
-        GruposController gruposController = loader.getController();
-        gruposController.setMainApp(mainApp);
-        */
-
     }
 
     @FXML
@@ -158,29 +148,29 @@ public class PaginaContactosController implements Initializable {
         if(tipoBusqueda.getValue()!=null) {
             switch (tipoBusqueda.getValue().toString()) {
                 case ("Apellidos"):
-                    loadData(Contacto.getContactos(textFieldContenido, "Apellidos"));
+                    loadData(contactosDao.getContactos(textFieldContenido, "Apellidos"));
                     System.out.println("Buscar x apellido");
                     break;
                 case ("Teléfono"):
-                    loadData(Contacto.getContactosEtiquetaTelefono(textFieldContenido));
+                    loadData(contactosDao.getContactosEtiquetaTelefono(textFieldContenido));
                     System.out.println("Buscar por Telefono");
                     break;
                 case ("E-mail"):
-                    loadData(Contacto.getContactosEtiquetaEmail(textFieldContenido));
+                    loadData(contactosDao.getContactosEtiquetaEmail(textFieldContenido));
                     System.out.println("Buscar por Telefono");
                     break;
                 case ("Grupo"):
-                    loadData(Contacto.getContactosNonmbreGrupo(textFieldContenido));
+                    loadData(contactosDao.getContactosNonmbreGrupo(textFieldContenido));
                     System.out.println("Buscar por Telefono");
                     break;
                 //Por defecto busco x nombre
                 case ("Nombre"):
-                    loadData(Contacto.getContactos(textFieldContenido, "Nombre"));
+                    loadData(contactosDao.getContactos(textFieldContenido, "Nombre"));
                     System.out.println("Buscar x Nombre");
             }
         }
         else{
-            loadData(Contacto.getContactos(textFieldContenido, "Nombre"));
+            loadData(contactosDao.getContactos(textFieldContenido, "Nombre"));
             System.out.println("Buscar x Nombre");
         }
 
@@ -193,7 +183,7 @@ public class PaginaContactosController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         btnEditarContacto.setDisable(true);
         initTable();
-        loadData(Contacto.getContactos());
+        loadData(contactosDao.getContactos());
 
 
     }
@@ -227,7 +217,7 @@ public class PaginaContactosController implements Initializable {
     }
 
     private void loadDataTelefonos(){
-        ArrayList<Telefono> listaTelefonos= Telefono.getTelefonosContacto(contacto.getId());
+        ArrayList<Telefono> listaTelefonos= telefonosDao.getTelefonosContacto(contacto.getId());
         tablaTelefonos.getItems().addAll(listaTelefonos);
     }
 

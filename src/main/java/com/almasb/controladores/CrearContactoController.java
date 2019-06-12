@@ -1,7 +1,9 @@
 package com.almasb.controladores;
 
 import com.almasb.DAO.ContactosDao;
+import com.almasb.DAO.EmailDao;
 import com.almasb.DAO.GruposDao;
+import com.almasb.DAO.TelefonosDao;
 import com.almasb.IGU.*;
 import com.almasb.IGU.Grupos;
 import com.jfoenix.controls.JFXButton;
@@ -14,21 +16,19 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+
 
 public class CrearContactoController implements Initializable {
 
     private ContactosDao contactosDao = new ContactosDao();
     private GruposDao gruposDao = new GruposDao();
+    private TelefonosDao telefonosDao = new TelefonosDao();
+    private EmailDao emailDao  = new EmailDao();
 
-    @Autowired
-    public void setContactosDao(ContactosDao monitorDao) { this.contactosDao=monitorDao; }
-
-    @Autowired
-    public void setGruposDao(GruposDao gruposDao) { this.gruposDao=gruposDao; }
 
     private ArrayList<Telefono> listaTelefonos;
     private ArrayList<Email> listaEmail;
@@ -74,6 +74,7 @@ public class CrearContactoController implements Initializable {
 
     @FXML
     void anadirCorreo(ActionEvent event) throws Exception{
+        Alert alert = new Alert(Alert.AlertType.ERROR);
         String[] aviso = {"E-mail no añadido", "Completa los campos correctamente"};
 
         if (!estaVacio(etiquetaCorreo) && !estaVacio(correo)){
@@ -81,11 +82,12 @@ public class CrearContactoController implements Initializable {
             email.setCorreo(correo.getText());
             email.setEtiquetaEmail(etiquetaCorreo.getText());
 
-            if (existeEmailLista(listaEmail, email)){
+            if (existeEmailLista(listaEmail, email) || emailDao.existeCorreo(correo.getText())){
                 aviso[1] = "Email ya existente";
             }
             else {
                 listaEmail.add(email);
+                alert.setAlertType(Alert.AlertType.INFORMATION);
                 aviso[0] = "Grupo añadido";
                 aviso[1] = "Se ha añadido correctamente, sigue añadiendole e-mails si lo deseas";
             }
@@ -93,7 +95,7 @@ public class CrearContactoController implements Initializable {
         etiquetaCorreo.setText(null);
         correo.setText(null);
 
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+
         alert.setTitle(aviso[0]);
         alert.setHeaderText(aviso[1]);
         alert.showAndWait();
@@ -103,6 +105,7 @@ public class CrearContactoController implements Initializable {
 
     @FXML
     void anadirGrupo(ActionEvent event) throws Exception{
+        Alert alert = new Alert(Alert.AlertType.ERROR);
         String[] aviso = {"Grupo no añadido", "Completa los campos correctamente"};
         if (comboBGrupos.getSelectionModel().isEmpty()){
             Grupos grupo = new Grupos();
@@ -112,12 +115,12 @@ public class CrearContactoController implements Initializable {
             }
             else {
                 listaGrupos.add(grupo.getNombre());
-
+                alert.setAlertType(Alert.AlertType.INFORMATION);
                 aviso[0] = "Grupo añadido";
                 aviso[1] = "Se ha añadido correctamente, sigue añadiendole grupos si lo deseas";
             }
         }
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+
         alert.setTitle(aviso[0]);
         alert.setHeaderText(aviso[1]);
         alert.showAndWait();
@@ -126,25 +129,30 @@ public class CrearContactoController implements Initializable {
 
     @FXML
     void anadirTelefono(ActionEvent event) throws Exception{
+        Alert alert = new Alert(Alert.AlertType.ERROR);
         String[] aviso = {"Telefono no añadido", "Completa los campos correctamente"};
-        if (!estaVacio(etiquetaTelefono) && !estaVacio((numero))){
-            Telefono telefono = new Telefono();
-            telefono.setNumero(Integer.parseInt(numero.getText()));
-            telefono.setEtiquetaTelefono(etiquetaTelefono.getText());
-            if (existeTelefonoLista(listaTelefonos ,telefono)) {
-                aviso[1] = "Telefono ya existente";
-            }
-            else {
-                listaTelefonos.add(telefono);
-                aviso[0] = "Telefono añadido";
-                aviso[1] = "Se ha añadido correctamente, sigue añadiendole telefonos si lo deseas";
-            }
+        if (!estaVacio(etiquetaTelefono) && !estaVacio((numero) /*&& Utils.esNumeric(numero.getText())*/)){
+
+                aviso[1]="Este telefono ya esta asignado";
+
+
+        Telefono telefono = new Telefono();
+        telefono.setNumero(Integer.parseInt(numero.getText()));
+        telefono.setEtiquetaTelefono(etiquetaTelefono.getText());
+        if (existeTelefonoLista(listaTelefonos, telefono) || telefonosDao.existeTelefono(Integer.parseInt(numero.getText()))) {
+            aviso[1] = "Telefono ya existente";
+        } else {
+            listaTelefonos.add(telefono);
+            alert.setAlertType(Alert.AlertType.INFORMATION);
+            aviso[0] = "Telefono añadido";
+            aviso[1] = "Se ha añadido correctamente, sigue añadiendole telefonos si lo deseas";
+        }
+
         }
 
         etiquetaTelefono.setText(null);
         numero.setText(null);
 
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(aviso[0]);
         alert.setHeaderText(aviso[1]);
         alert.showAndWait();
@@ -161,6 +169,7 @@ public class CrearContactoController implements Initializable {
 
     @FXML
     void crearContacto(ActionEvent event) throws Exception{
+        Alert alert = new Alert(Alert.AlertType.ERROR);
         String[] aviso = {"Contacto no añadido", "Completa los campos correctamente"};
         if (!estaVacio(nombre) && !estaVacio(apellido)){
             Contacto contacto= new Contacto();
@@ -170,10 +179,10 @@ public class CrearContactoController implements Initializable {
             contacto.setEmailsContacto(listaEmail);
             contacto.setGruposContacto(listaGrupos);
             contactosDao.anadirContacto(contacto);
+            alert.setAlertType(Alert.AlertType.INFORMATION);
             aviso[0]="Contacto añadido!";
             aviso[1]="Puedes seguir adiendo contactos";
         }
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(aviso[0]);
         alert.setHeaderText(aviso[1]);
         alert.showAndWait();
@@ -184,14 +193,7 @@ public class CrearContactoController implements Initializable {
 
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        ArrayList<String> listaGrupos= gruposDao.getGrupos();
-        ObservableList<String> listaGruposEncapsulados = FXCollections.observableArrayList(listaGrupos);
-        this.comboBGrupos.setItems(listaGruposEncapsulados);
-        initListas();
 
-    }
     private void initListas(){
         listaTelefonos= new ArrayList<Telefono>();
         listaEmail = new ArrayList<Email>();
@@ -202,6 +204,7 @@ public class CrearContactoController implements Initializable {
     private Boolean estaVacio(JFXTextField jfxTextField){
         return jfxTextField.getText() == null || jfxTextField.getText().equals("");
     }
+
 
     private Boolean existeTelefonoLista(ArrayList<Telefono> lista, Telefono objeto){
         for (int i = 0; i<lista.size(); i++){
@@ -224,4 +227,12 @@ public class CrearContactoController implements Initializable {
         return false;
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ArrayList<String> listaGrupos= gruposDao.getGrupos();
+        ObservableList<String> listaGruposEncapsulados = FXCollections.observableArrayList(listaGrupos);
+        this.comboBGrupos.setItems(listaGruposEncapsulados);
+        initListas();
+
+    }
 }

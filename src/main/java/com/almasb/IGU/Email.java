@@ -55,7 +55,7 @@ public class Email implements Comparable<Email>{
     }
     @Override
     public int compareTo(Email o) {
-        if(this.getCorreo().equals(o.getCorreo()) && this.getEtiquetaEmail().equals(o.getEtiquetaEmail()))
+        if(this.getCorreo().equals(o.getCorreo()) /*&& this.getEtiquetaEmail().equals(o.getEtiquetaEmail())*/)
             return -1;
         return 0;
     }

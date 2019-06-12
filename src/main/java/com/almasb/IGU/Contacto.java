@@ -99,16 +99,9 @@ public class Contacto {
         this.gruposContacto = gruposContacto;
     }
 
-
+    /*
     public static ArrayList<Contacto> getContactos(){
-        //Devuelve todos los contactos
-        //return null;
-        ArrayList<Contacto> lista =new ArrayList<>();
-        Contacto contacto1 = new Contacto(1, "Miguel", "López");
-        Contacto contacto2 = new Contacto(2, "Carlos", "Juan");
-        lista.add(contacto1);
-        lista.add(contacto2);
-        return lista;
+
     }
 
     public static ArrayList<Contacto> getContactos(String buscar, String tipo){
@@ -123,7 +116,7 @@ public class Contacto {
         lista.add(contacto2);
         return lista;
 
-         */
+
         Contacto contacto2 = new Contacto(2, "Carlos", "Juan");
         ArrayList<Contacto> lista = new ArrayList<Contacto>();
         lista.add(contacto2);
@@ -150,4 +143,6 @@ public class Contacto {
         // Devuelve una lista de contactos con el nombre de grupo que paso como parametro
         return new ArrayList<Contacto>();
     }
+
+     */
 }

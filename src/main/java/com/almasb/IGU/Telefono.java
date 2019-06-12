@@ -70,7 +70,7 @@ public class Telefono implements Comparable<Telefono>{
     }
 
 
-
+    /*
     public  static ArrayList<Telefono> getTelefonosContacto(int id){
 
         ArrayList<Telefono> lista =new ArrayList<>();
@@ -81,9 +81,11 @@ public class Telefono implements Comparable<Telefono>{
         return lista;
     }
 
+     */
+
     @Override
     public int compareTo(Telefono o) {
-        if(this.getNumero()==o.getNumero() && this.getEtiquetaTelefono().equals(o.getEtiquetaTelefono()))
+        if(this.getNumero()==o.getNumero() /*&& this.getEtiquetaTelefono().equals(o.getEtiquetaTelefono())*/)
             return -1;
         return 0;
     }

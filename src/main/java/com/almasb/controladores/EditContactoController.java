@@ -1,5 +1,7 @@
 package com.almasb.controladores;
 
+import com.almasb.DAO.ContactosDao;
+import com.almasb.DAO.TelefonosDao;
 import com.almasb.IGU.*;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -25,6 +27,8 @@ public class EditContactoController {
     private Contacto contacto;
     private DaoEmail mailDao = new DaoEmail();
     private DaoGrupo grupoDao = new DaoGrupo();
+    private TelefonosDao telefonosDao = new TelefonosDao();
+    private ContactosDao contactosDao = new ContactosDao();
 
     public void setStagePrincipal (Stage escenario) {
         this.ventanaPrincipal= escenario;
@@ -379,7 +383,7 @@ public class EditContactoController {
     }
 
     public void cargarTelefonos () {
-        ArrayList<Telefono> tlfsCont = Telefono.getTelefonosContacto(contacto.getId());
+        ArrayList<Telefono> tlfsCont = telefonosDao.getTelefonosContacto(contacto.getId());
         ArrayList<String> auxTlf = new ArrayList<>();
         for(Telefono tlf : tlfsCont){
             int num = tlf.getNumero();

@@ -1,9 +1,6 @@
 package com.almasb.controladores;
 
-import com.almasb.IGU.Contacto;
-import com.almasb.IGU.Email;
-import com.almasb.IGU.Grupos;
-import com.almasb.IGU.Telefono;
+import com.almasb.IGU.*;
 import com.almasb.logica.FXApp;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -30,14 +27,15 @@ import java.util.ResourceBundle;
 public class PaginaContactosController implements Initializable {
 
     private FXApp mainApp;
+    private Contacto contacto;
+    private DaoGrupo grupoDao = new DaoGrupo();
+    private DaoEmail mailDao = new DaoEmail();
 
     public void setMainApp(FXApp mainApp){
         this.mainApp=mainApp;
     }
-
-    private Contacto contacto;
-
-    private PaginaContactosController paginaController;
+    public void setGrupoDao (DaoGrupo daoGrupo){ this.grupoDao = daoGrupo; }
+    public void setMailDao (DaoEmail daoMail) { this.mailDao = daoMail; }
 
     @FXML
     private TableView<Contacto> tablaContactos;
@@ -98,9 +96,7 @@ public class PaginaContactosController implements Initializable {
 
     @FXML
     void config(MouseEvent event) throws Exception{
-
         mainApp.mostrarVentanaConfiguracion();
-
     }
 
     @FXML
@@ -113,24 +109,8 @@ public class PaginaContactosController implements Initializable {
 
     @FXML
     void editarContacto(MouseEvent event) throws Exception {
-        Contacto contactoSelec = tablaContactos.getSelectionModel().getSelectedItem();
-
-        Stage stageEdit = new Stage();
-        FXMLLoader loader = new FXMLLoader();
-        AnchorPane root = (AnchorPane) loader.load(getClass().getResource("/view/editContacto.fxml").openStream());
-        EditContactoController editController = (EditContactoController) loader.getController();
-        editController.recogeContacto(paginaController, contactoSelec);
-        Scene escenario = new Scene(root);
-        stageEdit.setTitle("Editar contacto");
-        stageEdit.setScene(escenario);
-        stageEdit.initModality(Modality.APPLICATION_MODAL);
-        stageEdit.show();
-
-    }
-
-    @FXML
-    public void actualizarContacto(){
-
+        contacto = tablaContactos.getSelectionModel().getSelectedItem();
+        mainApp.mostrarVentanaEditarContactos(contacto);
     }
 
     @FXML
@@ -148,7 +128,6 @@ public class PaginaContactosController implements Initializable {
             loadDataGrupos();
             btnEditarContacto.setDisable(false);
         }
-        System.out.println("Presiono un contacto y su id es: "+contacto.getId());
     }
 
     @FXML
@@ -258,7 +237,7 @@ public class PaginaContactosController implements Initializable {
 
     }
     private void loadDataEmails(){
-        ArrayList<Email> listaEmails= Email.getEmailsContacto(contacto.getId());
+        ArrayList<Email> listaEmails= mailDao.getEmailsContacto(contacto.getId());
         tablaEmails.getItems().addAll(listaEmails);
     }
 
@@ -266,7 +245,7 @@ public class PaginaContactosController implements Initializable {
         nombreGruposColumna.setCellValueFactory(new PropertyValueFactory<>("nombre"));
     }
     private void loadDataGrupos(){
-        List<Grupos> listaGrupos = Grupos.getGruposContacto(contacto.getId());
+        List<Grupos> listaGrupos = grupoDao.getGruposContacto(contacto.getId());
         tablaGrupos.getItems().addAll(listaGrupos);
     }
 

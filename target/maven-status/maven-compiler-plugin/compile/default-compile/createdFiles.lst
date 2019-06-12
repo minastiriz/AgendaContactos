@@ -1,13 +1,28 @@
 com\almasb\IGU\Telefono.class
+<<<<<<< Updated upstream
 com\almasb\controladores\CrearContactoController.class
 com\almasb\controladores\GruposController.class
 com\almasb\logica\FXApp.class
+=======
+>>>>>>> Stashed changes
 com\almasb\IGU\Grupos.class
 com\almasb\DAO\GruposDao.class
 com\almasb\IGU\Email.class
+<<<<<<< Updated upstream
 com\almasb\DAO\ContactosDao.class
+=======
+com\almasb\controladores\AddEmailContacto.class
+com\almasb\controladores\EditEmailContactoController.class
+com\almasb\IGU\Contacto.class
+com\almasb\IGU\DaoGrupo.class
+com\almasb\IGU\DaoEmail.class
+com\almasb\controladores\AddGrupoContactoController.class
+com\almasb\controladores\EditTelefonoContactoController.class
+com\almasb\controladores\GruposController.class
+com\almasb\logica\FXApp.class
+>>>>>>> Stashed changes
 com\almasb\controladores\EditContactoController.class
 com\almasb\controladores\PaginaContactosController.class
-com\almasb\IGU\Contacto.class
+com\almasb\controladores\AddTelefonoContactoController.class
 com\almasb\controladores\EditGrupoController.class
 com\almasb\Utils.class

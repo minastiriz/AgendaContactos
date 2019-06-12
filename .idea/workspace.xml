@@ -1,39 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c71f787c-dd5e-41e9-b68c-5de96f26b0f6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditGrupoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/crearContacto.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/view/modificarGrupo.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/IGU/Contacto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/IGU/Contacto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/IGU/EditContacto.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/EditContacto.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/IGU/Email.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/IGU/Email.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/IGU/Grupos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/IGU/Grupos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/IGU/Telefono.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/IGU/Telefono.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/controladores/GruposController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/controladores/GruposController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/controladores/PaginaContactosController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/controladores/PaginaContactosController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/almasb/logica/FXApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/almasb/logica/FXApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/paginaContactos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/paginaContactos.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/prueba.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/IGU/Contacto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/almasb/IGU/Contacto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/IGU/Email.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/IGU/Grupos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/IGU/Telefono.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/almasb/IGU/Telefono.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/controladores/GruposController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/controladores/PaginaContactosController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/almasb/logica/FXApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/paginaContactos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/paginaContactos.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/prueba.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-    </list>
+    <list default="true" id="c71f787c-dd5e-41e9-b68c-5de96f26b0f6" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,72 +16,57 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/logica/FXApp.java">
+      <file leaf-file-name="EditContactoController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="69" column="34" lean-forward="true" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
+            <state relative-caret-position="312">
+              <caret line="268" column="53" lean-forward="false" selection-start-line="268" selection-start-column="53" selection-end-line="268" selection-end-column="53" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2094#2095#0" expanded="true" />
-                <element signature="e#2122#2123#0" expanded="true" />
+                <element signature="method#addGrupo#0;class#EditContactoController#0" expanded="false" />
+                <element signature="method#recibeGrupoAdded#0;class#EditContactoController#0" expanded="false" />
+                <element signature="method#addMail#0;class#EditContactoController#0" expanded="false" />
+                <element signature="method#recogeDatosAddMail#0;class#EditContactoController#0" expanded="false" />
+                <element signature="method#addTlf#0;class#EditContactoController#0" expanded="false" />
+                <element signature="method#recogeDatosAddTlf#0;class#EditContactoController#0" expanded="false" />
+                <element signature="method#deleteGrupo#0;class#EditContactoController#0" expanded="false" />
+                <element signature="method#deleteMail#0;class#EditContactoController#0" expanded="false" />
+                <element signature="method#deleteTlf#0;class#EditContactoController#0" expanded="false" />
+                <element signature="method#recogeDatosEditMail#0;class#EditContactoController#0" expanded="false" />
+                <element signature="method#editTlf#0;class#EditContactoController#0" expanded="false" />
+                <element signature="method#recogeDatosEditTelefono#0;class#EditContactoController#0" expanded="false" />
+                <element signature="method#guardarTodo#0;class#EditContactoController#0" expanded="false" />
+                <element signature="method#volverAtras#0;class#EditContactoController#0" expanded="false" />
+                <element signature="method#recogeContacto#0;class#EditContactoController#0" expanded="false" />
+                <element signature="method#cargarTelefonos#0;class#EditContactoController#0" expanded="false" />
+                <element signature="method#cargarMails#0;class#EditContactoController#0" expanded="false" />
+                <element signature="method#cargarGrupos#0;class#EditContactoController#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file leaf-file-name="DaoGrupo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/IGU/DaoGrupo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-593">
+              <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PaginaContactosController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/PaginaContactosController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="263" column="82" selection-start-line="263" selection-start-column="76" selection-end-line="263" selection-end-column="82" />
+            <state relative-caret-position="297">
+              <caret line="112" column="56" lean-forward="true" selection-start-line="111" selection-start-column="7" selection-end-line="112" selection-end-column="56" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#config#0;class#PaginaContactosController#0" expanded="false" />
+                <element signature="method#crearContacto#0;class#PaginaContactosController#0" expanded="false" />
+                <element signature="method#contactoElegido#0;class#PaginaContactosController#0" expanded="false" />
+                <element signature="method#gestionarGrupos#0;class#PaginaContactosController#0" expanded="false" />
+                <element signature="method#buscarContacto#0;class#PaginaContactosController#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/IGU/Contacto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="24" column="59" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="59" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2935#2945#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/IGU/Grupos.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-              <folding>
-                <element signature="e#266#267#0" expanded="true" />
-                <element signature="e#332#333#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/GruposController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="29" column="37" lean-forward="true" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditGrupoController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
         </entry>
@@ -124,8 +81,19 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>get</find>
+      <find>setD</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -137,14 +105,21 @@
         <option value="$PROJECT_DIR$/src/main/resources/view/grupos.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/view/crearContacto.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/view/paginaContactos.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/almasb/IGU/Email.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/almasb/IGU/Telefono.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/almasb/controladores/GruposController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/almasb/logica/FXApp.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/almasb/IGU/Contacto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/almasb/controladores/AddGrupoContacto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/almasb/controladores/AddTelefonoContactoController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/almasb/controladores/AddEmailContacto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditEmailContacto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditTelefonoContactoController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/almasb/IGU/Grupos.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/almasb/IGU/Email.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/almasb/IGU/DaoEmail.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/almasb/IGU/DaoGrupo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/almasb/logica/FXApp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/almasb/controladores/GruposController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/almasb/controladores/PaginaContactosController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java" />
       </list>
     </option>
   </component>
@@ -169,17 +144,30 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="977" />
-    <option name="height" value="1038" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
@@ -314,7 +302,6 @@
                 <option value="exec:java" />
               </list>
             </option>
-            <option name="pomFileName" />
             <option name="profilesMap">
               <map />
             </option>
@@ -323,8 +310,10 @@
           </MavenRunnerParameters>
         </option>
       </MavenSettings>
-      <method v="2" />
     </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -356,88 +345,475 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23154363" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info id="Image Layers" order="6" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.10623229" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.26628897" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Java Regex Tester" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32913387" />
-      <window_info anchor="bottom" id="Terminal" order="12" />
-      <window_info anchor="bottom" id="Version Control" order="13" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="GfmBrowser" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Maven" order="5" weight="0.024161074" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Database" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Palette" order="9" />
-      <window_info anchor="right" id="Maven Projects" order="10" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26628897" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32755905" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="GfmBrowser" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.024161074" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.105511814" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24026845" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info id="Image Layers" order="6" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.10623229" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.26628897" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Java Regex Tester" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32913387" />
-      <window_info anchor="bottom" id="Terminal" order="12" />
-      <window_info anchor="bottom" id="Version Control" order="13" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="GfmBrowser" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Maven" order="5" weight="0.024161074" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Database" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Palette" order="9" />
-      <window_info anchor="right" id="Maven Projects" order="10" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>172</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>170</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>100</line>
+          <properties />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>101</line>
+          <properties />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>197</line>
+          <properties />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>198</line>
+          <properties />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>218</line>
+          <properties />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>220</line>
+          <properties />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>240</line>
+          <properties />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>241</line>
+          <properties />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>173</line>
+          <properties />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>176</line>
+          <properties />
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>199</line>
+          <properties />
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>242</line>
+          <properties />
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>137</line>
+          <properties />
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>136</line>
+          <properties />
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>134</line>
+          <properties />
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>133</line>
+          <properties />
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>279</line>
+          <properties />
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>280</line>
+          <properties />
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>282</line>
+          <properties />
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>283</line>
+          <properties />
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>284</line>
+          <properties />
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>320</line>
+          <properties />
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>321</line>
+          <properties />
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>323</line>
+          <properties />
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>324</line>
+          <properties />
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>325</line>
+          <properties />
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/IGU/DaoEmail.java</url>
+          <line>5</line>
+          <properties />
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/IGU/DaoEmail.java</url>
+          <line>9</line>
+          <properties />
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/IGU/DaoEmail.java</url>
+          <line>12</line>
+          <properties />
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/IGU/DaoGrupo.java</url>
+          <line>5</line>
+          <properties />
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/IGU/DaoGrupo.java</url>
+          <line>9</line>
+          <properties />
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/IGU/DaoGrupo.java</url>
+          <line>12</line>
+          <properties />
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>98</line>
+          <properties />
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>196</line>
+          <properties />
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>302</line>
+          <properties />
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>97</line>
+          <properties class="com.almasb.controladores.EditContactoController" method="recibeGrupoAdded">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>132</line>
+          <properties class="com.almasb.controladores.EditContactoController" method="recogeDatosAddMail">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>169</line>
+          <properties class="com.almasb.controladores.EditContactoController" method="recogeDatosAddTlf">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>195</line>
+          <properties class="com.almasb.controladores.EditContactoController" method="deleteGrupo">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>216</line>
+          <properties class="com.almasb.controladores.EditContactoController" method="deleteMail">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>238</line>
+          <properties class="com.almasb.controladores.EditContactoController" method="deleteTlf">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>278</line>
+          <properties class="com.almasb.controladores.EditContactoController" method="recogeDatosEditMail">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>319</line>
+          <properties class="com.almasb.controladores.EditContactoController" method="recogeDatosEditTelefono">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/GruposController.java</url>
+          <line>26</line>
+          <properties field="grupoDao" class="com.almasb.controladores.GruposController" />
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>25</line>
+          <properties field="mailDao" class="com.almasb.controladores.EditContactoController" />
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java</url>
+          <line>26</line>
+          <properties field="grupoDao" class="com.almasb.controladores.EditContactoController" />
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/PaginaContactosController.java</url>
+          <line>30</line>
+          <properties field="grupoDao" class="com.almasb.controladores.PaginaContactosController" />
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/PaginaContactosController.java</url>
+          <line>31</line>
+          <properties field="mailDao" class="com.almasb.controladores.PaginaContactosController" />
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="89" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditTelefonoContactoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="47" column="41" lean-forward="false" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5559">
+          <caret line="327" column="21" lean-forward="false" selection-start-line="327" selection-start-column="21" selection-end-line="327" selection-end-column="21" />
+          <folding>
+            <element signature="method#addGrupo#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#recibeGrupoAdded#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#addMail#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#recogeDatosAddMail#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#addTlf#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#recogeDatosAddTlf#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#deleteGrupo#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#deleteMail#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#deleteTlf#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#recogeDatosEditMail#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#editTlf#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#recogeDatosEditTelefono#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#guardarTodo#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#volverAtras#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#recogeContacto#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#cargarTelefonos#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#cargarMails#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#cargarGrupos#0;class#EditContactoController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/logica/FXApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="69" column="34" lean-forward="false" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
+          <folding>
+            <element signature="e#2892#2893#0" expanded="false" />
+            <element signature="e#2920#2921#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/PaginaContactosController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4471">
+          <caret line="263" column="82" lean-forward="false" selection-start-line="263" selection-start-column="76" selection-end-line="263" selection-end-column="82" />
+          <folding>
+            <element signature="method#config#0;class#PaginaContactosController#0" expanded="false" />
+            <element signature="method#crearContacto#0;class#PaginaContactosController#0" expanded="false" />
+            <element signature="method#contactoElegido#0;class#PaginaContactosController#0" expanded="false" />
+            <element signature="method#gestionarGrupos#0;class#PaginaContactosController#0" expanded="false" />
+            <element signature="method#buscarContacto#0;class#PaginaContactosController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/IGU/Contacto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="24" column="59" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/GruposController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="29" column="37" lean-forward="false" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditGrupoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/IGU/Grupos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/IGU/GruposController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/main/FXApp.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/IGU/Contactos.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/IGU/InfoContacto.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -445,183 +821,212 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/IGU/RootLayout.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/IGU/NewContacto.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/configuracion.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/prueba.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-11.0.3/lib/src.zip!/java.base/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
-          <caret line="831" column="19" selection-start-line="831" selection-start-column="19" selection-end-line="831" selection-end-column="19" />
+          <caret line="831" column="19" lean-forward="false" selection-start-line="831" selection-start-column="19" selection-end-line="831" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/11/javafx-fxml-11-win.jar!/javafx/fxml/FXMLLoader.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="360" selection-start-line="360" selection-end-line="360" />
+          <caret line="360" column="0" lean-forward="false" selection-start-line="360" selection-start-column="0" selection-end-line="360" selection-end-column="0" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/paginaContactos2.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-base/11/javafx-base-11-win.jar!/javafx/event/EventHandler.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="11" column="9" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/IGU/Email.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="59" column="51" lean-forward="true" selection-start-line="59" selection-start-column="51" selection-end-line="59" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1235#1236#0" expanded="true" />
-          </folding>
+          <caret line="11" column="9" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-base/11/javafx-base-11-win.jar!/com/sun/javafx/collections/ObservableListWrapper.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
-          <caret line="84" selection-start-line="84" selection-end-line="84" />
+          <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/IGU/Contacto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-187">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/IGU/DaoEmail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/IGU/Email.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/IGU/Grupos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="12" column="20" lean-forward="false" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/IGU/Telefono.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/paginaContactos.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="16" column="56" lean-forward="true" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="141" selection-start-line="141" selection-end-line="141" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/crearContacto.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="96" column="14" selection-start-line="96" selection-start-column="14" selection-end-line="96" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/editContacto.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/grupos.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="36" column="25" lean-forward="true" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/modificarGrupo.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/logica/FXApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="69" column="34" lean-forward="true" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
+        <state relative-caret-position="-355">
+          <caret line="60" column="31" lean-forward="false" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/AddEmailContacto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="26" column="42" lean-forward="false" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2094#2095#0" expanded="true" />
-            <element signature="e#2122#2123#0" expanded="true" />
+            <element signature="method#guardarCambios#0;class#AddEmailContacto#0" expanded="false" />
+            <element signature="method#volverAtras#0;class#AddEmailContacto#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/AddGrupoContactoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-83">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="method#addGrupo#0;class#AddGrupoContactoController#0" expanded="false" />
+            <element signature="method#volverAtras#0;class#AddGrupoContactoController#0" expanded="false" />
+            <element signature="method#recibeController#0;class#AddGrupoContactoController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/AddTelefonoContactoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="26" column="42" lean-forward="false" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
+          <folding>
+            <element signature="method#guardarCambios#0;class#AddTelefonoContactoController#0" expanded="false" />
+            <element signature="method#volverAtras#0;class#AddTelefonoContactoController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditEmailContactoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="45" column="113" lean-forward="false" selection-start-line="45" selection-start-column="113" selection-end-line="45" selection-end-column="113" />
+          <folding>
+            <element signature="method#guardarCambios#0;class#EditEmailContactoController#0" expanded="false" />
+            <element signature="method#volverAtras#0;class#EditEmailContactoController#0" expanded="false" />
+            <element signature="method#recibeControllerDatos#0;class#EditEmailContactoController#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditGrupoController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="189">
+          <caret line="19" column="41" lean-forward="false" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+          <folding>
+            <element signature="method#guardarNombre#0;class#EditGrupoController#0" expanded="false" />
+            <element signature="method#recibeNombre#0;class#EditGrupoController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditTelefonoContactoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="45" column="117" lean-forward="false" selection-start-line="45" selection-start-column="117" selection-end-line="45" selection-end-column="117" />
+          <folding>
+            <element signature="method#guardarCambios#0;class#EditTelefonoContactoController#0" expanded="false" />
+            <element signature="method#volverAtras#0;class#EditTelefonoContactoController#0" expanded="false" />
+            <element signature="method#recibeControllerDatos#0;class#EditTelefonoContactoController#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/GruposController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="29" column="37" lean-forward="true" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
+        <state relative-caret-position="595">
+          <caret line="88" column="0" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding>
+            <element signature="method#borrarGrupo#0;class#GruposController#0" expanded="false" />
+            <element signature="method#crearGrupo#0;class#GruposController#0" expanded="false" />
+            <element signature="method#editarGrupo#0;class#GruposController#0" expanded="false" />
+            <element signature="method#realizaModificacion#0;class#GruposController#0" expanded="false" />
+            <element signature="method#volverAnterior#0;class#GruposController#0" expanded="false" />
+            <element signature="method#getItemsBox#0;class#GruposController#0" expanded="false" />
+            <element signature="method#initialize#0;class#GruposController#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/IGU/Contacto.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/EditContactoController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="24" column="59" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="59" />
+        <state relative-caret-position="312">
+          <caret line="268" column="53" lean-forward="false" selection-start-line="268" selection-start-column="53" selection-end-line="268" selection-end-column="53" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2935#2945#0" expanded="true" />
+            <element signature="method#addGrupo#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#recibeGrupoAdded#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#addMail#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#recogeDatosAddMail#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#addTlf#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#recogeDatosAddTlf#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#deleteGrupo#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#deleteMail#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#deleteTlf#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#recogeDatosEditMail#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#editTlf#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#recogeDatosEditTelefono#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#guardarTodo#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#volverAtras#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#recogeContacto#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#cargarTelefonos#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#cargarMails#0;class#EditContactoController#0" expanded="false" />
+            <element signature="method#cargarGrupos#0;class#EditContactoController#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/IGU/DaoGrupo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-593">
+          <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/controladores/PaginaContactosController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="263" column="82" selection-start-line="263" selection-start-column="76" selection-end-line="263" selection-end-column="82" />
+        <state relative-caret-position="297">
+          <caret line="112" column="56" lean-forward="true" selection-start-line="111" selection-start-column="7" selection-end-line="112" selection-end-column="56" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/almasb/IGU/Grupos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-          <folding>
-            <element signature="e#266#267#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
+            <element signature="method#config#0;class#PaginaContactosController#0" expanded="false" />
+            <element signature="method#crearContacto#0;class#PaginaContactosController#0" expanded="false" />
+            <element signature="method#contactoElegido#0;class#PaginaContactosController#0" expanded="false" />
+            <element signature="method#gestionarGrupos#0;class#PaginaContactosController#0" expanded="false" />
+            <element signature="method#buscarContacto#0;class#PaginaContactosController#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -1,5 +1,6 @@
 package com.almasb.logica;
 
+import com.almasb.IGU.Contacto;
 import com.almasb.controladores.EditContactoController;
 import com.almasb.controladores.GruposController;
 import com.almasb.controladores.PaginaContactosController;
@@ -8,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -41,7 +43,24 @@ public class FXApp extends Application {
             //tratar la excepción.
         }
     }
-    public void mostrarVentanaEditarContactos() {
+    public void mostrarVentanaEditarContactos(Contacto contacto) {
+
+        try {
+            Stage stageEdit = new Stage();
+            FXMLLoader loader = new FXMLLoader();
+            AnchorPane root = null;
+            root = (AnchorPane) loader.load(getClass().getResource("/view/editContacto.fxml").openStream());
+            EditContactoController editController = (EditContactoController) loader.getController();
+            editController.recogeContacto(contacto);
+            Scene escenario = new Scene(root);
+            stageEdit.setTitle("Editar contacto");
+            stageEdit.setScene(escenario);
+            stageEdit.initModality(Modality.APPLICATION_MODAL);
+            stageEdit.show();
+        } catch (IOException e) {
+            // Tratar excepción
+        }
+
         /*
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/editContacto.fxml"));

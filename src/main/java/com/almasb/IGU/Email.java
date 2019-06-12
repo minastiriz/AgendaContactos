@@ -11,9 +11,7 @@ import java.util.ArrayList;
 public class Email implements Comparable<Email>{
 
     private IntegerProperty id;
-
     private  StringProperty correo;
-
     private  StringProperty etiquetaEmail;
 
     public Email(){
@@ -29,55 +27,32 @@ public class Email implements Comparable<Email>{
         this.etiquetaEmail= new SimpleStringProperty(etiqueta);
     }
 
-    public int getId() {
-        return id.get();
-    }
-
-    public void setId(int id) {
-        this.id.set(id);
-    }
-
+    // PROPIEDADES
     public IntegerProperty idProperty() {
         return id;
     }
-
-
-    public String getCorreo() {
-        return correo.get();
+    public StringProperty numeroProperty() {
+        return correo;
+    }
+    public StringProperty etiquetaEmailProperty() {
+        return etiquetaEmail;
     }
 
     public void setCorreo(String correo){
         this.correo.set(correo);
     }
+    public void setEtiquetaEmail(String etiqueta) { this.etiquetaEmail.set(etiqueta); }
 
-    public StringProperty numeroProperty() {
-        return correo;
+    // GETTERS
+    public int getId() {
+        return id.get();
     }
-
-
-
+    public String getCorreo() {
+        return correo.get();
+    }
     public String getEtiquetaEmail() {
         return etiquetaEmail.get();
     }
-
-    public void setEtiquetaEmail(String etiqueta) {
-        this.etiquetaEmail.set(etiqueta);
-    }
-
-    public StringProperty etiquetaEmailProperty() {
-        return etiquetaEmail;
-    }
-
-
-    public  static ArrayList<Email> getEmailsContacto(int id) {
-        ArrayList<Email> lista =new ArrayList<>();
-        Email email = new Email(1,"boqweiybcf@test.es","uji");
-        Email email2 = new Email(2, "boqweiybcf@test.es", "trabajo");
-        lista.add(email);
-        lista.add(email2);
-        return lista;
-    }
-
     @Override
     public int compareTo(Email o) {
         if(this.getCorreo().equals(o.getCorreo()) && this.getEtiquetaEmail().equals(o.getEtiquetaEmail()))

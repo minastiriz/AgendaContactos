@@ -1,5 +1,6 @@
 package com.almasb.controladores;
 
+import com.almasb.IGU.DaoGrupo;
 import com.almasb.IGU.Grupos;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -23,11 +24,9 @@ import java.util.ResourceBundle;
 
 public class GruposController implements Initializable {
 
-    //FALTA metodo volver a la pagina anterior
-    GruposController gruposController;
+    private DaoGrupo grupoDao = new DaoGrupo();
 
-    // Acceso al modelo ficticio
-    Grupos modeloGrupos = new Grupos();
+    public void setGrupoDao(DaoGrupo grupoDao) { this.grupoDao = grupoDao; }
 
     @FXML
     private JFXComboBox<String> gruposBox;
@@ -50,7 +49,7 @@ public class GruposController implements Initializable {
     @FXML
     void borrarGrupo(MouseEvent event) {
         //Hace referencia al boton de borrar, borrará un grupo seleccionado en el box
-        boolean borrado = modeloGrupos.borrarGrupo(gruposBox.getValue());
+        boolean borrado = grupoDao.borrarGrupo(gruposBox.getValue());
         if(borrado && gruposBox.getItems().indexOf(gruposBox.getValue()) >= 0){
             //GESTION PARA BORRARLO
             gruposBox.getItems().remove(gruposBox.getValue());
@@ -70,7 +69,7 @@ public class GruposController implements Initializable {
     @FXML
     void crearGrupo(MouseEvent event) {
         //Hace referencia al boton de crear, creará un grupo con el nombre en el txtfield
-        boolean res = modeloGrupos.crearGrupo(txtCrearGrupo.getText());
+        boolean res = grupoDao.crearGrupo(txtCrearGrupo.getText());
         if(res){
             gruposBox.getItems().add(txtCrearGrupo.getText());
             txtCrearGrupo.setText("");
@@ -94,7 +93,7 @@ public class GruposController implements Initializable {
             FXMLLoader loader = new FXMLLoader();
             AnchorPane root = (AnchorPane) loader.load(getClass().getResource("/view/modificarGrupo.fxml").openStream());
             EditGrupoController editController = (EditGrupoController) loader.getController();
-            editController.recibeNombre(gruposController, gruposBox.getValue());
+            editController.recibeNombre(this, gruposBox.getValue());
             Scene escenario = new Scene(root);
             stageEdit.setTitle("Editar Grupo");
             stageEdit.setScene(escenario);
@@ -112,7 +111,7 @@ public class GruposController implements Initializable {
     @FXML
     public void realizaModificacion(String nombre){
         // Este metodo recibe el nombre modificado de parte de la vista de modificacion
-        boolean res = modeloGrupos.editarGrupo(gruposBox.getValue(), nombre);
+        boolean res = grupoDao.editarGrupo(gruposBox.getValue(), nombre);
         if(res){
             gruposBox.getItems().set(gruposBox.getItems().indexOf(gruposBox.getValue()), nombre);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -138,7 +137,7 @@ public class GruposController implements Initializable {
     @FXML
     private ObservableList<String> getItemsBox(){
         // Este metodo permitirá comunicar al controlador con el modelo para recoger los datos de los grupos
-        List<String> nombresGrupos = modeloGrupos.getGrupos();
+        List<String> nombresGrupos = grupoDao.getGrupos();
         ObservableList<String> itemsBox = FXCollections.observableArrayList(nombresGrupos);
         return itemsBox;
     }
@@ -148,6 +147,5 @@ public class GruposController implements Initializable {
         //Al iniciar la vista se cargaran los datos de la base de datos para el combobox con todos los grupos creados
         gruposBox.setItems(getItemsBox());
         gruposBox.getSelectionModel().select(0);
-        gruposController = this;
     }
 }

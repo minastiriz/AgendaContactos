@@ -104,7 +104,9 @@ public class PaginaContactosController implements Initializable {
     }
 
     @FXML
-    void crearContacto(MouseEvent event) {
+    void crearContacto(MouseEvent event) throws Exception {
+
+        mainApp.mostrarVentanaCrearContacto();
         // Método que llevará a la página de creación de contacto
 
     }

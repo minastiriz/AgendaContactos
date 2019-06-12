@@ -82,4 +82,13 @@ public class FXApp extends Application {
         stage.setScene(escenario);
         stage.show();
     }
+
+    public void mostrarVentanaCrearContacto() throws Exception {
+        Parent grp = FXMLLoader.load(getClass().getResource("/view/crearContacto.fxml"));
+        Scene escenario = new Scene(grp);
+        Stage stage = new Stage();
+        stage.setTitle("Grupos");
+        stage.setScene(escenario);
+        stage.show();
+    }
 }

@@ -8,15 +8,18 @@ import javafx.beans.property.StringProperty;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Telefono {
+public class Telefono implements Comparable<Telefono>{
 
-    private  IntegerProperty id;
+    private IntegerProperty id;
 
-    private  IntegerProperty numero;
+    private IntegerProperty numero;
 
     private  StringProperty etiquetaTelefono;
 
     public Telefono(){
+        id = new SimpleIntegerProperty();
+        numero = new SimpleIntegerProperty();
+        etiquetaTelefono = new SimpleStringProperty();
 
     }
 
@@ -27,11 +30,11 @@ public class Telefono {
     }
 
 
-    public int getId() {
+    public final int getId() {
         return id.get();
     }
 
-    public void setId(int id) {
+    public final void setId(int id) {
         this.id.set(id);
     }
 
@@ -40,11 +43,11 @@ public class Telefono {
     }
 
 
-    public int getNumero() {
+    public final int getNumero() {
         return numero.get();
     }
 
-    public void setNumero(int numero){
+    public final void setNumero(int numero){
         this.numero.set(numero);
     }
 
@@ -54,11 +57,11 @@ public class Telefono {
 
 
 
-    public String getEtiquetaTelefono() {
+    public final String getEtiquetaTelefono() {
         return etiquetaTelefono.get();
     }
 
-    public void setEtiquetaTelefono(String etiqueta) {
+    public final void setEtiquetaTelefono(String etiqueta) {
         this.etiquetaTelefono.set(etiqueta);
     }
 
@@ -78,5 +81,11 @@ public class Telefono {
         return lista;
     }
 
+    @Override
+    public int compareTo(Telefono o) {
+        if(this.getNumero()==o.getNumero() && this.getEtiquetaTelefono().equals(o.getEtiquetaTelefono()))
+            return -1;
+        return 0;
+    }
 }
 

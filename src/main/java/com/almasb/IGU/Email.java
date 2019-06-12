@@ -6,9 +6,9 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class Email {
+
+public class Email implements Comparable<Email>{
 
     private IntegerProperty id;
 
@@ -17,6 +17,9 @@ public class Email {
     private  StringProperty etiquetaEmail;
 
     public Email(){
+        this.id = new SimpleIntegerProperty();
+        this.correo= new SimpleStringProperty();
+        this.etiquetaEmail= new SimpleStringProperty();
 
     }
 
@@ -43,7 +46,7 @@ public class Email {
         return correo.get();
     }
 
-    public void setNumero(String correo){
+    public void setCorreo(String correo){
         this.correo.set(correo);
     }
 
@@ -75,8 +78,12 @@ public class Email {
         return lista;
     }
 
-
-
+    @Override
+    public int compareTo(Email o) {
+        if(this.getCorreo().equals(o.getCorreo()) && this.getEtiquetaEmail().equals(o.getEtiquetaEmail()))
+            return -1;
+        return 0;
+    }
 }
 
 

@@ -15,12 +15,14 @@ public class Grupos {
     }
 
     public Grupos (){
-
+        this.nombre = new SimpleStringProperty();
     }
 
     public static List<Grupos> getGruposContacto(int id) {
         Grupos g1 = new Grupos("Tolai" );
-        return new ArrayList<Grupos>();
+        ArrayList<Grupos> lista= new ArrayList<Grupos>();
+        lista.add(g1);
+        return lista;
     }
 
 
@@ -71,4 +73,6 @@ public class Grupos {
     public void borrarContactoGrupo (){
 
     }
+
+
 }

@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.almasb.controladores.CrearContactoController">
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -32,8 +31,8 @@
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <JFXTextField text="Nombre" />
-                  <JFXTextField text="Apellido">
+                  <JFXTextField fx:id="nombre" promptText="Nombre" />
+                  <JFXTextField fx:id="apellido" promptText="Apellido">
                      <HBox.margin>
                         <Insets left="50.0" right="50.0" />
                      </HBox.margin>
@@ -63,17 +62,17 @@
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <JFXTextField text="Telefono">
+                  <JFXTextField fx:id="numero" promptText="Telefono">
                      <padding>
                         <Insets left="10.0" />
                      </padding>
                   </JFXTextField>
-                  <JFXTextField text="Etiqueta">
+                  <JFXTextField fx:id="etiquetaTelefono" promptText="Etiqueta">
                      <padding>
                         <Insets left="50.0" right="50.0" />
                      </padding>
                   </JFXTextField>
-                  <JFXButton text="Añadir" />
+                  <JFXButton fx:id="btnAnadirTelefono" onAction="#anadirTelefono" text="Añadir" />
                </children>
                <VBox.margin>
                   <Insets left="70.0" />
@@ -96,17 +95,17 @@
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <JFXTextField text="E-mail">
+                  <JFXTextField fx:id="correo" promptText="E-mail">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
                   </JFXTextField>
-                  <JFXTextField text="Etiqueta">
+                  <JFXTextField fx:id="etiquetaCorreo" promptText="Etiqueta">
                      <HBox.margin>
                         <Insets left="50.0" right="50.0" />
                      </HBox.margin>
                   </JFXTextField>
-                  <JFXButton text="Añadir" />
+                  <JFXButton fx:id="btnAnadirCorreo" onAction="#anadirCorreo" text="Añadir" />
                </children>
                <VBox.margin>
                   <Insets left="70.0" />
@@ -129,12 +128,12 @@
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <JFXComboBox promptText="Grupos disponibles">
+                  <JFXComboBox fx:id="comboBGrupos" promptText="Grupos disponibles">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
                   </JFXComboBox>
-                  <JFXButton text="Añadir">
+                  <JFXButton fx:id="btnAnadirGrupo" onAction="#anadirGrupo" text="Añadir">
                      <HBox.margin>
                         <Insets left="50.0" right="50.0" />
                      </HBox.margin>
@@ -146,12 +145,20 @@
             </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <JFXButton text="Volver">
+                  <JFXButton fx:id="btnCrearContacto" onAction="#crearContacto" text="Crear contacto">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
                      <padding>
-                        <Insets left="800.0" />
+                        <Insets left="600.0" />
+                     </padding>
+                  </JFXButton>
+                  <JFXButton fx:id="btnVolver" onAction="#cerrarVenanaVolver" text="Volver">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="100.0" />
                      </padding>
                   </JFXButton>
                </children>

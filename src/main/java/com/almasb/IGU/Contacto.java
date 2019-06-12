@@ -15,30 +15,26 @@ public class Contacto {
 
     private StringProperty apellido;
 
-    public Contacto() {
+    private ArrayList<Telefono> telefonosContacto;
 
+    private ArrayList<Email> emailsContacto;
+
+    private ArrayList<String> gruposContacto;
+
+    public Contacto() {
+        this.id = new SimpleIntegerProperty();
+        this.nombre = new SimpleStringProperty();
+        this.apellido = new SimpleStringProperty();
     }
 
     public Contacto(int id, String nombre, String apellido) {
         this.id = new SimpleIntegerProperty(id);
         this.nombre = new SimpleStringProperty(nombre);
         this.apellido = new SimpleStringProperty(apellido);
+
+
     }
 
-    public static List<Contacto> getContactosEtiquetaTelefono(String textFieldContenido) {
-        //Devuelve una lista de contactos con la etiqueta telefono indicada
-        return new ArrayList<Contacto>();
-    }
-
-    public static List<Contacto> getContactosEtiquetaEmail(String textFieldContenido) {
-        // Devuelve una lista de contactos con la etiqueta Email indicada
-        return new ArrayList<Contacto>();
-    }
-
-    public static List<Contacto> getContactosNonmbreGrupo(String textFieldContenido) {
-        // Devuelve una lista de contactos con el nombre de grupo que paso como parametro
-        return new ArrayList<Contacto>();
-    }
 
     public int getId() {
         return id.get();
@@ -79,6 +75,31 @@ public class Contacto {
     }
 
 
+    public ArrayList<Telefono> getTelefonosContacto() {
+        return telefonosContacto;
+    }
+
+    public void setTelefonosContacto(ArrayList<Telefono> telefonosContacto) {
+        this.telefonosContacto = telefonosContacto;
+    }
+
+    public ArrayList<Email> getEmailsContacto() {
+        return emailsContacto;
+    }
+
+    public void setEmailsContacto(ArrayList<Email> emailsContacto) {
+        this.emailsContacto = emailsContacto;
+    }
+
+    public ArrayList<String> getGruposContacto() {
+        return gruposContacto;
+    }
+
+    public void setGruposContacto(ArrayList<String> gruposContacto) {
+        this.gruposContacto = gruposContacto;
+    }
+
+
     public static ArrayList<Contacto> getContactos(){
         //Devuelve todos los contactos
         //return null;
@@ -95,7 +116,7 @@ public class Contacto {
         //return null;
         //Buscar por tipo==Apellidos o sino Nombre
         /*
-        ArrayList<Contacto> lista =new ArrayList<>();
+         ArrayList<Contacto> lista =new ArrayList<>();
         Contacto contacto1 = new Contacto(1, "Miguel", "López");
         Contacto contacto2 = new Contacto(2, "Carlos", "Juan");
         lista.add(contacto1);
@@ -111,7 +132,22 @@ public class Contacto {
     }
 
     public  Contacto getContacto(int id){
+
         return null;
     }
 
+    public static List<Contacto> getContactosEtiquetaTelefono(String textFieldContenido) {
+        //Devuelve una lista de contactos con la etiqueta telefono indicada
+        return new ArrayList<Contacto>();
+    }
+
+    public static List<Contacto> getContactosEtiquetaEmail(String textFieldContenido) {
+        // Devuelve una lista de contactos con la etiqueta Email indicada
+        return new ArrayList<Contacto>();
+    }
+
+    public static List<Contacto> getContactosNonmbreGrupo(String textFieldContenido) {
+        // Devuelve una lista de contactos con el nombre de grupo que paso como parametro
+        return new ArrayList<Contacto>();
+    }
 }

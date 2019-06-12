@@ -25,14 +25,14 @@ public class EditEmailContactoController {
 
     @FXML
     void guardarCambios(MouseEvent event) {
-        if(!txtEmail.equals("")){
+        if(!txtEmail.equals("") && !txtEtiqueta.equals("")){
             controller.recogeDatosEditMail(txtEmail.getText(), txtEtiqueta.getText());
             Stage stage = (Stage) btnSave.getScene().getWindow();
             stage.close();
         }else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error al modificar");
-            alert.setHeaderText("Introduzca, al menos, un email");
+            alert.setHeaderText("Rellene todos los campos");
             alert.showAndWait();
         }
     }

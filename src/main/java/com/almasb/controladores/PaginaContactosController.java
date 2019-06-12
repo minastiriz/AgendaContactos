@@ -2,6 +2,8 @@ package com.almasb.controladores;
 
 import com.almasb.DAO.ContactosDao;
 import com.almasb.DAO.TelefonosDao;
+import com.almasb.DAO.EmailDao;
+import com.almasb.DAO.GruposDao;
 import com.almasb.IGU.*;
 import com.almasb.logica.FXApp;
 import com.jfoenix.controls.JFXButton;
@@ -26,6 +28,8 @@ public class PaginaContactosController implements Initializable {
 
     private FXApp mainApp;
     private Contacto contacto;
+    private GruposDao grupoDao = new GruposDao();
+    private EmailDao mailDao = new EmailDao();
 
     private ContactosDao contactosDao = new ContactosDao();
     private TelefonosDao telefonosDao = new TelefonosDao();
@@ -131,7 +135,7 @@ public class PaginaContactosController implements Initializable {
 
     @FXML
     void gestionarGrupos(MouseEvent event) throws Exception{
-
+        // Método que llevará a la página de grupos
         mainApp.mostrarVentanaGrupos();
 
     }

@@ -1,5 +1,6 @@
 package com.almasb.controladores;
 
+import com.almasb.IGU.Email;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
@@ -25,14 +26,17 @@ public class AddEmailContacto {
 
     @FXML
     void guardarCambios(MouseEvent event) {
-        if(!txtEmail.getText().equals("")) {
-            controller.recogeDatosAddMail(txtEmail.getText(), txtEtiqueta.getText());
+        if(!txtEmail.getText().equals("") && !txtEtiqueta.getText().equals("")) {
+            Email mail = new Email();
+            mail.setCorreo(txtEmail.getText());
+            mail.setEtiquetaEmail(txtEtiqueta.getText());
+            controller.recogeDatosAddMail(mail);
             Stage stage = (Stage) btnAdd.getScene().getWindow();
             stage.close();
         }else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error al crear");
-            alert.setHeaderText("Introduzca, al menos, un email");
+            alert.setHeaderText("Rellene todos los campos");
             alert.showAndWait();
         }
     }

@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox layoutX="26.0" layoutY="14.0" prefHeight="164.0" prefWidth="245.0" spacing="80.0" AnchorPane.bottomAnchor="516.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="929.0" AnchorPane.topAnchor="20.0">
@@ -28,18 +27,7 @@
       </VBox>
       <VBox layoutX="1018.0" layoutY="574.0" prefHeight="41.0" prefWidth="105.0" AnchorPane.bottomAnchor="95.0" AnchorPane.leftAnchor="1000.0" AnchorPane.rightAnchor="95.0" AnchorPane.topAnchor="600.0">
          <children>
-            <HBox>
-               <children>
-                  <JFXButton alignment="BOTTOM_RIGHT" text="Volver">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </JFXButton>
-               </children>
-            </HBox>
+            <HBox />
          </children>
       </VBox>
       <VBox alignment="CENTER" layoutX="289.0" layoutY="226.0" spacing="40.0" AnchorPane.bottomAnchor="244.0" AnchorPane.leftAnchor="289.0" AnchorPane.rightAnchor="438.0" AnchorPane.topAnchor="250.0">
@@ -55,5 +43,13 @@
             </JFXButton>
          </children>
       </VBox>
+      <JFXButton alignment="BOTTOM_RIGHT" layoutX="1065.0" layoutY="600.0" text="Volver">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
    </children>
 </AnchorPane>

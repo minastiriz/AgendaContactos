@@ -1,5 +1,7 @@
 package com.almasb.controladores;
 
+import com.almasb.IGU.Telefono;
+import com.almasb.Utils;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
@@ -25,14 +27,17 @@ public class AddTelefonoContactoController {
 
     @FXML
     void guardarCambios(MouseEvent event) {
-        if(!txtTelefono.getText().equals("")) {
-            controller.recogeDatosAddTlf(txtTelefono.getText(), txtEtiqueta.getText());
+        if(!txtTelefono.getText().equals("") && !txtEtiqueta.getText().equals("") && Utils.isNumeric(txtTelefono.getText())) {
+            Telefono tlf = new Telefono();
+            tlf.setNumero(Integer.parseInt(txtTelefono.getText()));
+            tlf.setEtiquetaTelefono(txtEtiqueta.getText());
+            controller.recogeDatosAddTlf(tlf);
             Stage stage = (Stage) btnAdd.getScene().getWindow();
             stage.close();
         }else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error al crear");
-            alert.setHeaderText("Introduzca, al menos, un número de telefono");
+            alert.setHeaderText("Rellene todos los campos de manera correcta");
             alert.showAndWait();
         }
     }

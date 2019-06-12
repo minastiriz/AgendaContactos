@@ -18,7 +18,6 @@ public class Email implements Comparable<Email>{
         this.id = new SimpleIntegerProperty();
         this.correo= new SimpleStringProperty();
         this.etiquetaEmail= new SimpleStringProperty();
-
     }
 
     public Email(int id, String correo, String etiqueta){
@@ -38,6 +37,8 @@ public class Email implements Comparable<Email>{
         return etiquetaEmail;
     }
 
+    // SETTERS
+    public void setId(int id) { this.id.set(id); }
     public void setCorreo(String correo){
         this.correo.set(correo);
     }
@@ -53,6 +54,7 @@ public class Email implements Comparable<Email>{
     public String getEtiquetaEmail() {
         return etiquetaEmail.get();
     }
+
     @Override
     public int compareTo(Email o) {
         if(this.getCorreo().equals(o.getCorreo()) /*&& this.getEtiquetaEmail().equals(o.getEtiquetaEmail())*/)

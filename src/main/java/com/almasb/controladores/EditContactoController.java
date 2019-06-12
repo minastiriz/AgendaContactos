@@ -2,6 +2,8 @@ package com.almasb.controladores;
 
 import com.almasb.DAO.ContactosDao;
 import com.almasb.DAO.TelefonosDao;
+import com.almasb.DAO.EmailDao;
+import com.almasb.DAO.GruposDao;
 import com.almasb.IGU.*;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -33,8 +35,8 @@ public class EditContactoController {
     public void setStagePrincipal (Stage escenario) {
         this.ventanaPrincipal= escenario;
     }
-    public void setMailDao (DaoEmail mailDao) { this.mailDao = mailDao; }
-    public void setGrupoDao (DaoGrupo grupoDao) { this.grupoDao = grupoDao; }
+    public void setMailDao (EmailDao mailDao) { this.mailDao = mailDao; }
+    public void setGrupoDao (GruposDao grupoDao) { this.grupoDao = grupoDao; }
 
     @FXML
     private JFXTextField txtNombre;
@@ -101,10 +103,7 @@ public class EditContactoController {
 
     public void recibeGrupoAdded (String grupo) {
         // Recibe el grupo y hace la llamada al modelo, posteriormente actualiza la combobox añadiendo el nuevo grupo
-
-        // Llamada al modelo
-        boolean added = true;
-
+        boolean added = grupoDao.addContactoGrupo(contacto.getId(), grupo);
         if(added) {
             cmboxGrupos.getItems().add(grupo);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -134,13 +133,13 @@ public class EditContactoController {
         stageEdit.show();
     }
 
-    public void recogeDatosAddMail (String correo, String etiqueta){
+    public void recogeDatosAddMail (Email mail){
         // LLamada al modelo para crear el objeto
-        boolean added = true;
+        boolean added = mailDao.addEmailContacto(contacto.getId(), mail);
 
         // Actualizacion de la vista
         if(added){
-            String valor = etiqueta+": "+correo;
+            String valor = mail.getEtiquetaEmail()+": "+mail.getCorreo();
             cmboxMails.getItems().add(valor);
             cmboxMails.getSelectionModel().select(0);
 
@@ -171,15 +170,14 @@ public class EditContactoController {
         stageEdit.show();
     }
 
-    public void recogeDatosAddTlf (String numero, String etiqueta){
+    public void recogeDatosAddTlf (Telefono tlf){
         // Recibe los datos y hace una llamada al modelo para crear el telefono
 
-        // LLamada al modelo para crear el objeto
+        // boolean added = daoTelefono.addTelefono(int id, Telefono tlf);
         boolean added = true;
-
         // Actualizacion de la vista
         if(added){
-            String valor = etiqueta+": "+numero;
+            String valor = tlf.getEtiquetaTelefono()+": "+tlf.getNumero();
             cmboxTlfs.getItems().add(valor);
             cmboxTlfs.getSelectionModel().select(0);
 
@@ -199,7 +197,7 @@ public class EditContactoController {
     @FXML
     void deleteGrupo(MouseEvent event) {
         // En base a lo que tuviera seleccionado en el combobox de grupos, se actualizará la combobox para borrarla
-        boolean borrado = true;
+        boolean borrado = grupoDao.borrarContactoGrupo(contacto.getId(), cmboxGrupos.getValue());
         // Se hace la llamada a la bbdd y en base a lo devuelto se actualiza o no la combobox
         if(borrado && cmboxGrupos.getItems().indexOf(cmboxGrupos.getValue()) >= 0){
             //GESTION PARA BORRARLO
@@ -220,7 +218,9 @@ public class EditContactoController {
     @FXML
     void deleteMail(MouseEvent event) {
         // En base a lo que tuviera seleccionado en el combobox de emails, se actualizará la combobox para borrarla
-        boolean borrado = true;
+        String valores = cmboxGrupos.getValue();
+        String[] valoresSeparados = valores.split(": ");
+        boolean borrado = mailDao.borrarMail(contacto.getId(), valoresSeparados[1]);
         // Se hace la llamada a la bbdd y en base a lo devuelto se actualiza o no la combobox
         if(borrado && cmboxMails.getItems().indexOf(cmboxMails.getValue()) >= 0){
             //GESTION PARA BORRARLO
@@ -280,13 +280,15 @@ public class EditContactoController {
         stageEdit.show();
     }
 
-    public void recogeDatosEditMail (String mail, String etiqueta){
+    public void recogeDatosEditMail (String mailNuevo, String etiqueta){
         // LLamada al modelo para crear el objeto
-        boolean added = true;
+        String valores = cmboxMails.getValue();
+        String[] valoresSeparados = valores.split(": ");
+        boolean added = mailDao.editEmailContacto(contacto.getId(), valoresSeparados[1], mailNuevo, etiqueta);
 
         // Actualizacion de la vista
         if(added){
-            String valor = etiqueta+": "+mail;
+            String valor = etiqueta+": "+mailNuevo;
             cmboxMails.getItems().set(cmboxMails.getItems().indexOf(cmboxMails.getValue()), valor);
             cmboxMails.getSelectionModel().select(0);
 

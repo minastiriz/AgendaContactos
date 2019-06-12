@@ -1,6 +1,6 @@
 package com.almasb.controladores;
 
-import com.almasb.IGU.DaoGrupo;
+import com.almasb.DAO.GruposDao;
 import com.almasb.IGU.Grupos;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -24,9 +24,9 @@ import java.util.ResourceBundle;
 
 public class GruposController implements Initializable {
 
-    private DaoGrupo grupoDao = new DaoGrupo();
+    private GruposDao grupoDao = new GruposDao();
 
-    public void setGrupoDao(DaoGrupo grupoDao) { this.grupoDao = grupoDao; }
+    public void setGrupoDao(GruposDao grupoDao) { this.grupoDao = grupoDao; }
 
     @FXML
     private JFXComboBox<String> gruposBox;
@@ -69,7 +69,9 @@ public class GruposController implements Initializable {
     @FXML
     void crearGrupo(MouseEvent event) {
         //Hace referencia al boton de crear, creará un grupo con el nombre en el txtfield
-        boolean res = grupoDao.crearGrupo(txtCrearGrupo.getText());
+        Grupos grp = new Grupos();
+        grp.setNombre(txtCrearGrupo.getText());
+        boolean res = grupoDao.crearGrupo(grp);
         if(res){
             gruposBox.getItems().add(txtCrearGrupo.getText());
             txtCrearGrupo.setText("");

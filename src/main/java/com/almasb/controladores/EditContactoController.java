@@ -176,8 +176,8 @@ public class EditContactoController {
     public void recogeDatosAddTlf (Telefono tlf){
         // Recibe los datos y hace una llamada al modelo para crear el telefono
         tlf.setId(contacto.getId());
-        //boolean added = daoTelefono.addTelefono(tlf);
-        boolean added = true;
+        boolean added = telefonosDao.addTelefono(tlf);
+
         // Actualizacion de la vista
         if(added){
             String valor = tlf.getEtiquetaTelefono()+": "+tlf.getNumero();
@@ -221,7 +221,7 @@ public class EditContactoController {
     @FXML
     void deleteMail(MouseEvent event) {
         // En base a lo que tuviera seleccionado en el combobox de emails, se actualizará la combobox para borrarla
-        String valores = cmboxGrupos.getValue();
+        String valores = cmboxMails.getValue();
         String[] valoresSeparados = valores.split(": ");
         boolean borrado = mailDao.borrarMail(contacto.getId(), valoresSeparados[1]);
         // Se hace la llamada a la bbdd y en base a lo devuelto se actualiza o no la combobox
@@ -245,7 +245,9 @@ public class EditContactoController {
     @FXML
     void deleteTlf(MouseEvent event) {
         // En base a lo que tuviera seleccionado en el combobox de telefonos, se actualizará la combobox para borrarla
-        boolean borrado = true;
+        String valores = cmboxTlfs.getValue();
+        String[] valoresSeparados = valores.split(": ");
+        boolean borrado = telefonosDao.borrarTelefono(contacto.getId(), valoresSeparados[1]);
         // Se hace la llamada a la bbdd y en base a lo devuelto se actualiza o no la combobox
         if(borrado && cmboxTlfs.getItems().indexOf(cmboxTlfs.getValue()) >= 0){
             //GESTION PARA BORRARLO
@@ -328,7 +330,9 @@ public class EditContactoController {
 
     public void recogeDatosEditTelefono (String telefono, String etiqueta){
         // LLamada al modelo para crear el objeto
-        boolean added = true;
+        String valores = cmboxTlfs.getValue();
+        String[] valoresSeparados = valores.split(": ");
+        boolean added = telefonosDao.editarTelefono(contacto.getId(), valoresSeparados[1], telefono, etiqueta);
 
         // Actualizacion de la vista
         if(added){
@@ -351,16 +355,20 @@ public class EditContactoController {
     @FXML
     void guardarTodo(MouseEvent event) {
         // Se guardaran el nombre y el apellido (si cambió)
+        boolean cambiado = false;
         if(txtNombre.getText() != null && txtNombre.getText() != contacto.getNombre()){
             // Nombre cambiado
             contacto.setNombre(txtNombre.getText());
+            cambiado = true;
         }
 
         if(txtApellido.getText()!= null && txtApellido.getText() != contacto.getApellido()){
             // Apellido cambiado
             contacto.setApellido(txtApellido.getText());
+            cambiado = true;
         }
         // El resto de modificaciones se habrán hecho ya en las acciones de los botones
+        if(cambiado) contactosDao.editarContacto(contacto);
         Stage stage = (Stage) btnGuardar.getScene().getWindow();
         stage.close();
     }

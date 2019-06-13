@@ -1,5 +1,6 @@
 C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\controladores\EditContactoController.java
 C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\controladores\AddGrupoContactoController.java
+C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\controladores\ConfiguracionController.java
 C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\IGU\Grupos.java
 C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\Utils.java
 C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\controladores\GruposController.java
@@ -8,6 +9,7 @@ C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\controladores\Ed
 C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\DAO\GruposDao.java
 C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\IGU\Email.java
 C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\IGU\Telefono.java
+C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\DAO\TelefonosDao.java
 C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\controladores\AddTelefonoContactoController.java
 C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\DAO\EmailDao.java
 C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\DAO\ContactosDao.java
@@ -17,3 +19,4 @@ C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\controladores\Ed
 C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\logica\FXApp.java
 C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\controladores\PaginaContactosController.java
 C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\IGU\Contacto.java
+C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\IGU\GrupoContacto.java

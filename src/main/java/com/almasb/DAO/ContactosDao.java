@@ -8,32 +8,60 @@ import java.util.List;
 public class ContactosDao {
 
     public void anadirContacto(Contacto contacto) {
+        // Método para crear un contacto nuevo
+        // Recibe al contacto como parámetro, en el cual se encuentra su información, tanto de usuario como de telefonos, emails y grupos
     }
 
-    public List<Contacto> getContactos(String textFieldContenido, String nombre) {
+    public boolean borrarContacto (Contacto contacto) {
+        // Método para borrar un contacto existente
+        // Recibe como parámetro un contacto en el cual se encuentra su información
+        // Devolverá un boolean dependiendo de si se borra correctamente o no
+        return true;
+    }
+
+    public List<Contacto> getContactos(String nombre, String tipo) {
+        // Método para recoger un listado de los contactos los cuales coincide su nombre o apellido
+        // Recibe como parámetro el nombre o apellido a buscar y el tipo de busqueda, si se trata de buscar por apellido o nombre
+        // Devolverá una lista con los contactos que coincidan. En caso de no haber coincidencias devolverá una lista vacía.
         return new ArrayList<Contacto>();
     }
 
-    public List<Contacto> getContactosNonmbreGrupo(String textFieldContenido) {
+    public List<Contacto> getContactosNonmbreGrupo(String nombre) {
+        // Método para encontrar los contactos que pertenecen a un determinado grupo
+        // Recibe como parámetro el nombre del grupo a buscar
+        // Devolverá una lista con los contactos que coincidan con la busqueda. En caso de no haber coincidencias devolverá lista vacía.
         return new ArrayList<Contacto>();
     }
 
-    public List<Contacto> getContactosEtiquetaEmail(String textFieldContenido) {
+    public List<Contacto> getContactosEtiquetaEmail(String etiqueta) {
+        // Método para buscar contactos por etiqueta de mail
+        // Recibirá como parámetro el nombre de la etiqueta a buscar
+        // Devolverá una lista con los contactos que coincidan con la busqueda. En caso de no haber coincidencias devolverá lista vacía.
         return new ArrayList<Contacto>();
     }
 
-    public List<Contacto> getContactosEtiquetaTelefono(String textFieldContenido) {
+    public List<Contacto> getContactosEtiquetaTelefono(String etiqueta) {
+        // Método para buscar contactos por etiqueta de telefono
+        // Recibirá como parámetro el nombre de la etiqueta a buscar
+        // Devolverá una lista con los contactos que coincidan con la busqueda. En caso de no haber coincidencias devolverá lista vacía.
         return new ArrayList<Contacto>();
     }
 
     public List<Contacto> getContactos() {
-        //Devuelve todos los contactos
-        //return null;
-        ArrayList<Contacto> lista =new ArrayList<>();
-        Contacto contacto1 = new Contacto(1, "Miguel", "López");
+        // Método para buscar todos los contactos registrados hasta el momento.
+        // Devolverá una lista con los contactos. En caso de no haber coincidencias devolverá lista vacía.
+        ArrayList<Contacto> lista =new ArrayList<Contacto>();
+        Contacto contacto1 = new Contacto(1, "Andres", "zópez");
         Contacto contacto2 = new Contacto(2, "Carlos", "Juan");
         lista.add(contacto1);
         lista.add(contacto2);
         return lista;
+    }
+
+    public boolean editarContacto (Contacto contacto){
+        // Método para editar un contacto sus campos nombre y apellidos
+        // Recibirá como parámetros un objeto contacto con la información guardada
+        // Devolverá un boolean indicando si la modificación se realizó con exito.
+        return true;
     }
 }

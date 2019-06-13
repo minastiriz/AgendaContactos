@@ -14,10 +14,12 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -39,6 +41,11 @@ public class PaginaContactosController implements Initializable {
         this.mainApp=mainApp;
     }
 
+    @FXML
+    private JFXButton btnSalir;
+
+    @FXML
+    private JFXButton btnBorrarContacto;
 
     @FXML
     private TableView<Contacto> tablaContactos;
@@ -82,7 +89,6 @@ public class PaginaContactosController implements Initializable {
     @FXML
     private JFXButton btnBuscarContacto;
 
-
     @FXML
     private JFXButton btnCrearContacto;
 
@@ -95,6 +101,38 @@ public class PaginaContactosController implements Initializable {
     @FXML
     private JFXButton btnConfiguracion;
 
+
+    @FXML
+    void salirApp(MouseEvent event) {
+        //Hace referencia al botón salir, saldrá de la aplicación
+        Stage stage = (Stage) btnSalir.getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
+    void borrarContacto(MouseEvent event) {
+        // Hace referencia al boton de eliminr contacto
+        if(tablaContactos.getSelectionModel().getSelectedItem() != null){
+            boolean borrado = contactosDao.borrarContacto(tablaContactos.getSelectionModel().getSelectedItem());
+            if(borrado) {
+                // Elemento borrado, actualizo tabla
+                tablaContactos.getItems().remove(tablaContactos.getSelectionModel().getSelectedItem());
+                borrarDatosTablaTelefono();
+                borrarDatosTablaEmail();
+                borrarDatosTablaGrupos();
+                // Ventana informacion
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Contacto eliminado");
+                alert.setHeaderText("El contacto fue borrado correctamente");
+                alert.showAndWait();
+            }
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error al borrar");
+            alert.setHeaderText("El contacto no se pudo borrar o no se seleccion´lo ningún contacto");
+            alert.showAndWait();
+        }
+    }
 
 
     @FXML
@@ -153,7 +191,7 @@ public class PaginaContactosController implements Initializable {
             switch (tipoBusqueda.getValue().toString()) {
                 case ("Apellidos"):
                     loadData(contactosDao.getContactos(textFieldContenido, "Apellidos"));
-                    System.out.println("Buscar x apellido");
+                    System.out.println("Buscar por apellido");
                     break;
                 case ("Teléfono"):
                     loadData(contactosDao.getContactosEtiquetaTelefono(textFieldContenido));

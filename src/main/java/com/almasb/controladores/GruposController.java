@@ -69,16 +69,18 @@ public class GruposController implements Initializable {
     @FXML
     void crearGrupo(MouseEvent event) {
         //Hace referencia al boton de crear, creará un grupo con el nombre en el txtfield
-        Grupos grp = new Grupos();
-        grp.setNombre(txtCrearGrupo.getText());
-        boolean res = grupoDao.crearGrupo(grp);
-        if(res){
-            gruposBox.getItems().add(txtCrearGrupo.getText());
-            txtCrearGrupo.setText("");
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Grupo creado");
-            alert.setHeaderText("El grupo se creó correctamente");
-            alert.showAndWait();
+        if(txtCrearGrupo != null && !txtCrearGrupo.getText().equals("")){
+            Grupos grp = new Grupos();
+            grp.setNombre(txtCrearGrupo.getText());
+            boolean res = grupoDao.crearGrupo(grp);
+            if(res) {
+                gruposBox.getItems().add(txtCrearGrupo.getText());
+                txtCrearGrupo.setText("");
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Grupo creado");
+                alert.setHeaderText("El grupo se creó correctamente");
+                alert.showAndWait();
+            }
         }else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error al crear");

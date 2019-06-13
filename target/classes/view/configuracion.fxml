@@ -57,7 +57,7 @@
             </HBox>
          </children>
       </VBox>
-      <JFXButton alignment="BOTTOM_RIGHT" layoutX="1065.0" layoutY="600.0" text="Volver">
+      <JFXButton fx:id="btnVolver" alignment="BOTTOM_RIGHT" layoutX="1065.0" layoutY="600.0" onMouseClicked="#volverAtras" text="Volver">
          <font>
             <Font size="14.0" />
          </font>

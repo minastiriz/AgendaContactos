@@ -213,7 +213,7 @@ public class EditContactoController {
             // NO SE PUDO BORRAR, MENSAJE DE ERROR
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error al borrar");
-            alert.setHeaderText("Hubo un problema al intentar borrar el contacto del grupo seleccionado");
+            alert.setHeaderText("Hubo un problema al intentar borrar el contacto del grupo seleccionado o no había ninguno seleccionado");
             alert.showAndWait();
         }
     }
@@ -221,23 +221,25 @@ public class EditContactoController {
     @FXML
     void deleteMail(MouseEvent event) {
         // En base a lo que tuviera seleccionado en el combobox de emails, se actualizará la combobox para borrarla
-        String valores = cmboxMails.getValue();
-        String[] valoresSeparados = valores.split(": ");
-        boolean borrado = mailDao.borrarMail(contacto.getId(), valoresSeparados[1]);
-        // Se hace la llamada a la bbdd y en base a lo devuelto se actualiza o no la combobox
-        if(borrado && cmboxMails.getItems().indexOf(cmboxMails.getValue()) >= 0){
-            //GESTION PARA BORRARLO
-            cmboxMails.getItems().remove(cmboxMails.getValue());
-            cmboxMails.getSelectionModel().select(0);
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Email del contacto borrado con exito");
-            alert.setHeaderText("El email del contacto fue borrado correctamente");
-            alert.showAndWait();
+        if(cmboxMails.getItems().indexOf(cmboxMails.getValue()) >= 0){
+            String valores = cmboxMails.getValue();
+            String[] valoresSeparados = valores.split(": ");
+            boolean borrado = mailDao.borrarMail(contacto.getId(), valoresSeparados[1]);
+            // Se hace la llamada a la bbdd y en base a lo devuelto se actualiza o no la combobo
+            if(borrado) {
+                //GESTION PARA BORRARLO
+                cmboxMails.getItems().remove(cmboxMails.getValue());
+                cmboxMails.getSelectionModel().select(0);
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Email del contacto borrado con exito");
+                alert.setHeaderText("El email del contacto fue borrado correctamente");
+                alert.showAndWait();
+            }
         }else{
             // NO SE PUDO BORRAR, MENSAJE DE ERROR
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error al borrar");
-            alert.setHeaderText("Hubo un problema al intentar borrar el email seleccionado");
+            alert.setHeaderText("Hubo un problema al intentar borrar el email seleccionado o no había ninguno seleccionado");
             alert.showAndWait();
         }
     }
@@ -245,18 +247,20 @@ public class EditContactoController {
     @FXML
     void deleteTlf(MouseEvent event) {
         // En base a lo que tuviera seleccionado en el combobox de telefonos, se actualizará la combobox para borrarla
-        String valores = cmboxTlfs.getValue();
-        String[] valoresSeparados = valores.split(": ");
-        boolean borrado = telefonosDao.borrarTelefono(contacto.getId(), valoresSeparados[1]);
-        // Se hace la llamada a la bbdd y en base a lo devuelto se actualiza o no la combobox
-        if(borrado && cmboxTlfs.getItems().indexOf(cmboxTlfs.getValue()) >= 0){
-            //GESTION PARA BORRARLO
-            cmboxTlfs.getItems().remove(cmboxTlfs.getValue());
-            cmboxTlfs.getSelectionModel().select(0);
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Telefono del contacto borrado");
-            alert.setHeaderText("El telefono del contacto fue borrado correctamente");
-            alert.showAndWait();
+        if(cmboxTlfs.getItems().indexOf(cmboxTlfs.getValue()) >= 0){
+            String valores = cmboxTlfs.getValue();
+            String[] valoresSeparados = valores.split(": ");
+            boolean borrado = telefonosDao.borrarTelefono(contacto.getId(), valoresSeparados[1]);
+            // Se hace la llamada a la bbdd y en base a lo devuelto se actualiza o no la combobox
+            if(borrado) {
+                //GESTION PARA BORRARLO
+                cmboxTlfs.getItems().remove(cmboxTlfs.getValue());
+                cmboxTlfs.getSelectionModel().select(0);
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Telefono del contacto borrado");
+                alert.setHeaderText("El telefono del contacto fue borrado correctamente");
+                alert.showAndWait();
+            }
         }else{
             // NO SE PUDO BORRAR, MENSAJE DE ERROR
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -269,20 +273,27 @@ public class EditContactoController {
     @FXML
     void editMail(MouseEvent event) throws IOException {
         // Se llevará a una nueva página para editar el mail o la etiqueta que tenía
-        Stage stageEdit = new Stage();
-        FXMLLoader loader = new FXMLLoader();
-        AnchorPane root = (AnchorPane) loader.load(getClass().getResource("/view/editEmailContacto.fxml").openStream());
-        EditEmailContactoController editController = (EditEmailContactoController) loader.getController();
+        if(cmboxMails.getItems().indexOf(cmboxMails.getValue()) >= 0){
+            Stage stageEdit = new Stage();
+            FXMLLoader loader = new FXMLLoader();
+            AnchorPane root = (AnchorPane) loader.load(getClass().getResource("/view/editEmailContacto.fxml").openStream());
+            EditEmailContactoController editController = (EditEmailContactoController) loader.getController();
 
-        String valores = cmboxMails.getValue();
-        String[] valoresSeparados = valores.split(": ");
+            String valores = cmboxMails.getValue();
+            String[] valoresSeparados = valores.split(": ");
 
-        editController.recibeControllerDatos(this, valoresSeparados[0], valoresSeparados[1]);
-        Scene escenario = new Scene(root);
-        stageEdit.setTitle("Modificar email");
-        stageEdit.setScene(escenario);
-        stageEdit.initModality(Modality.APPLICATION_MODAL);
-        stageEdit.show();
+            editController.recibeControllerDatos(this, valoresSeparados[0], valoresSeparados[1]);
+            Scene escenario = new Scene(root);
+            stageEdit.setTitle("Modificar email");
+            stageEdit.setScene(escenario);
+            stageEdit.initModality(Modality.APPLICATION_MODAL);
+            stageEdit.show();
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error al modificar");
+            alert.setHeaderText("No seleccionó ningún email");
+            alert.showAndWait();
+        }
     }
 
     public void recogeDatosEditMail (String mailNuevo, String etiqueta){
@@ -312,20 +323,27 @@ public class EditContactoController {
     @FXML
     void editTlf(MouseEvent event) throws IOException {
         // Se llevará a una nueva página para editar los telefonos o la etiqueta que tenía
-        Stage stageEdit = new Stage();
-        FXMLLoader loader = new FXMLLoader();
-        AnchorPane root = (AnchorPane) loader.load(getClass().getResource("/view/editTelefonoContacto.fxml").openStream());
-        EditTelefonoContactoController editController = (EditTelefonoContactoController) loader.getController();
+        if(cmboxTlfs.getItems().indexOf(cmboxTlfs.getValue()) >= 0) {
+            Stage stageEdit = new Stage();
+            FXMLLoader loader = new FXMLLoader();
+            AnchorPane root = (AnchorPane) loader.load(getClass().getResource("/view/editTelefonoContacto.fxml").openStream());
+            EditTelefonoContactoController editController = (EditTelefonoContactoController) loader.getController();
 
-        String valores = cmboxTlfs.getValue();
-        String[] valoresSeparados = valores.split(": ");
+            String valores = cmboxTlfs.getValue();
+            String[] valoresSeparados = valores.split(": ");
 
-        editController.recibeControllerDatos(this, valoresSeparados[0], valoresSeparados[1]);
-        Scene escenario = new Scene(root);
-        stageEdit.setTitle("Modificar telefono");
-        stageEdit.setScene(escenario);
-        stageEdit.initModality(Modality.APPLICATION_MODAL);
-        stageEdit.show();
+            editController.recibeControllerDatos(this, valoresSeparados[0], valoresSeparados[1]);
+            Scene escenario = new Scene(root);
+            stageEdit.setTitle("Modificar telefono");
+            stageEdit.setScene(escenario);
+            stageEdit.initModality(Modality.APPLICATION_MODAL);
+            stageEdit.show();
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error al modificar");
+            alert.setHeaderText("No seleccionó ningún telefono");
+            alert.showAndWait();
+        }
     }
 
     public void recogeDatosEditTelefono (String telefono, String etiqueta){

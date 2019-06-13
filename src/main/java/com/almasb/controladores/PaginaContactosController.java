@@ -129,7 +129,7 @@ public class PaginaContactosController implements Initializable {
         }else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error al borrar");
-            alert.setHeaderText("El contacto no se pudo borrar o no se seleccion´lo ningún contacto");
+            alert.setHeaderText("El contacto no se pudo borrar o no se seleccionó ningún contacto");
             alert.showAndWait();
         }
     }

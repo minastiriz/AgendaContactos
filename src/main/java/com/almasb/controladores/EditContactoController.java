@@ -101,11 +101,13 @@ public class EditContactoController {
         stageEdit.show();
     }
 
-    public void recibeGrupoAdded (String grupo) {
-        // Recibe el grupo y hace la llamada al modelo, posteriormente actualiza la combobox añadiendo el nuevo grupo
-        boolean added = grupoDao.addContactoGrupo(contacto.getId(), grupo);
+    public void recibeGrupoAdded (String nombreGrupo) {
+        // Recibe el nombre del grupo y hace la llamada al modelo, posteriormente actualiza la combobox añadiendo el nuevo grupo
+        GrupoContacto grupoContacto= new GrupoContacto(nombreGrupo, contacto.getId());
+        //gruposContacto.set(contacto.getId());
+        boolean added = grupoDao.addContactoGrupo(grupoContacto);
         if(added) {
-            cmboxGrupos.getItems().add(grupo);
+            cmboxGrupos.getItems().add(nombreGrupo);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Contacto añadido al grupo");
             alert.setHeaderText("El contacto fue añadido al grupo correctamente");
@@ -135,7 +137,8 @@ public class EditContactoController {
 
     public void recogeDatosAddMail (Email mail){
         // LLamada al modelo para crear el objeto
-        boolean added = mailDao.addEmailContacto(contacto.getId(), mail);
+        mail.setId(contacto.getId());
+        boolean added = mailDao.addEmailContacto(mail);
 
         // Actualizacion de la vista
         if(added){
@@ -172,8 +175,8 @@ public class EditContactoController {
 
     public void recogeDatosAddTlf (Telefono tlf){
         // Recibe los datos y hace una llamada al modelo para crear el telefono
-
-        // boolean added = daoTelefono.addTelefono(int id, Telefono tlf);
+        tlf.setId(contacto.getId());
+        //boolean added = daoTelefono.addTelefono(tlf);
         boolean added = true;
         // Actualizacion de la vista
         if(added){

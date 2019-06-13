@@ -6,6 +6,7 @@ import com.almasb.DAO.GruposDao;
 import com.almasb.DAO.TelefonosDao;
 import com.almasb.IGU.*;
 import com.almasb.IGU.Grupos;
+import com.almasb.Utils;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
@@ -29,7 +30,6 @@ public class CrearContactoController implements Initializable {
     private GruposDao gruposDao = new GruposDao();
     private TelefonosDao telefonosDao = new TelefonosDao();
     private EmailDao emailDao  = new EmailDao();
-
 
     private ArrayList<Telefono> listaTelefonos;
     private ArrayList<Email> listaEmail;
@@ -82,6 +82,7 @@ public class CrearContactoController implements Initializable {
             Email email = new Email();
             email.setCorreo(correo.getText());
             email.setEtiquetaEmail(etiquetaCorreo.getText());
+            email.setId(contacto.getId());
 
             if (existeEmailLista(listaEmail, email) || emailDao.existeCorreo(correo.getText())){
                 aviso[1] = "Email ya existente";
@@ -107,21 +108,18 @@ public class CrearContactoController implements Initializable {
     @FXML
     void anadirGrupo(ActionEvent event) throws Exception{
         Alert alert = new Alert(Alert.AlertType.ERROR);
-        String[] aviso = {"Grupo no añadido", "Completa los campos correctamente"};
-        if (comboBGrupos.getSelectionModel().isEmpty()){
+        String[] aviso = {"Grupo no añadido", "Ya no existen mas grupos creados"};
+        if (!comboBGrupos.getSelectionModel().isEmpty()){
             Grupos grupo = new Grupos();
             grupo.setNombre(comboBGrupos.getValue().toString());
-            if (existeGrupoLista(listaGrupos, grupo)) {
-                aviso[1] = "Grupo ya existente";
-            }
-            else {
-                listaGrupos.add(grupo.getNombre());
-                alert.setAlertType(Alert.AlertType.INFORMATION);
-                aviso[0] = "Grupo añadido";
-                aviso[1] = "Se ha añadido correctamente, sigue añadiendole grupos si lo deseas";
-            }
-        }
 
+            listaGrupos.add(grupo.getNombre());
+            comboBGrupos.getItems().remove(comboBGrupos.getValue());
+            alert.setAlertType(Alert.AlertType.INFORMATION);
+            aviso[0] = "Grupo añadido";
+            aviso[1] = "Se ha añadido correctamente, sigue añadiendole grupos si lo deseas";
+
+        }
         alert.setTitle(aviso[0]);
         alert.setHeaderText(aviso[1]);
         alert.showAndWait();
@@ -132,17 +130,15 @@ public class CrearContactoController implements Initializable {
     void anadirTelefono(ActionEvent event) throws Exception{
         Alert alert = new Alert(Alert.AlertType.ERROR);
         String[] aviso = {"Telefono no añadido", "Completa los campos correctamente"};
-        if (!estaVacio(etiquetaTelefono) && !estaVacio((numero) /*&& Utils.esNumeric(numero.getText())*/)){
-
-                aviso[1]="Este telefono ya esta asignado";
-
-
-        Telefono telefono = new Telefono();
-        telefono.setNumero(Integer.parseInt(numero.getText()));
-        telefono.setEtiquetaTelefono(etiquetaTelefono.getText());
+        if (!estaVacio(etiquetaTelefono) && !estaVacio(numero) && Utils.isNumeric(numero.getText()) /*&& Utils.esNumeric(numero.getText())*/){
+            Telefono telefono = new Telefono();
+            telefono.setNumero(Integer.parseInt(numero.getText()));
+            telefono.setEtiquetaTelefono(etiquetaTelefono.getText());
+            telefono.setId(contacto.getId());
         if (existeTelefonoLista(listaTelefonos, telefono) || telefonosDao.existeTelefono(Integer.parseInt(numero.getText()))) {
             aviso[1] = "Telefono ya existente";
-        } else {
+        }
+        else {
             listaTelefonos.add(telefono);
             alert.setAlertType(Alert.AlertType.INFORMATION);
             aviso[0] = "Telefono añadido";
@@ -163,6 +159,7 @@ public class CrearContactoController implements Initializable {
     @FXML
     void cerrarVenanaVolver(ActionEvent event) throws Exception{
         //Hace referencia al botón volver, llevará a la ventana anterior en la que se encontraba el usuario
+
         Stage stage = (Stage) btnVolver.getScene().getWindow();
         stage.close();
 

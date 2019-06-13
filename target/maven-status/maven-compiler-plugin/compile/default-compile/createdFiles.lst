@@ -1,5 +1,6 @@
 com\almasb\IGU\Telefono.class
 com\almasb\controladores\CrearContactoController.class
+com\almasb\DAO\TelefonosDao.class
 com\almasb\IGU\Grupos.class
 com\almasb\DAO\GruposDao.class
 com\almasb\IGU\Email.class
@@ -9,9 +10,11 @@ com\almasb\controladores\EditEmailContactoController.class
 com\almasb\IGU\Contacto.class
 com\almasb\controladores\AddGrupoContactoController.class
 com\almasb\Utils.class
+com\almasb\controladores\ConfiguracionController.class
 com\almasb\controladores\EditTelefonoContactoController.class
 com\almasb\controladores\GruposController.class
 com\almasb\logica\FXApp.class
+com\almasb\IGU\GrupoContacto.class
 com\almasb\controladores\EditContactoController.class
 com\almasb\controladores\PaginaContactosController.class
 com\almasb\DAO\EmailDao.class

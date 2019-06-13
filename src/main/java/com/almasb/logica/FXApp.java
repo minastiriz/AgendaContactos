@@ -106,7 +106,7 @@ public class FXApp extends Application {
         Parent grp = FXMLLoader.load(getClass().getResource("/view/crearContacto.fxml"));
         Scene escenario = new Scene(grp);
         Stage stage = new Stage();
-        stage.setTitle("Grupos");
+        stage.setTitle("Crear contactos");
         stage.setScene(escenario);
         stage.show();
     }

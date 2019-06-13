@@ -1,5 +1,6 @@
 package com.almasb.DAO;
 
+import com.almasb.IGU.GrupoContacto;
 import com.almasb.IGU.Grupos;
 import javafx.beans.property.StringProperty;
 
@@ -49,9 +50,9 @@ public class GruposDao {
         return true;
     }
 
-    public boolean addContactoGrupo (int id, String grupo){
-        // Método para añadir un contacto a un grupo.
-        // Recibirá como parámetros el id del contacto y el grupo al que se le quiere meter.
+    public boolean addContactoGrupo (GrupoContacto grupo){
+        // Método para añadir un GrupoContacto.
+        // Recibirá como parámetros el GrupoContacto con el atributo id de su contacto
         // Devolverá un boolean indicando si se añadió de forma correcta o no.
         return true;
     }

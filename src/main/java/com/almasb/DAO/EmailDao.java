@@ -26,9 +26,9 @@ public class EmailDao {
         return true;
     }
 
-    public boolean addEmailContacto(int id, Email mail){
+    public boolean addEmailContacto(Email mail){
         // Método para añadir un email a un contacto.
-        // Recibirá como parámetro el id del contacto y el mail a añadir.
+        // Email a añadir.
         // Devolverá un boolean indicando si se añadió correctamente o no.
         return true;
     }

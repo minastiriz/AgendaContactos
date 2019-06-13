@@ -1,38 +1,54 @@
 package com.almasb.DAO;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import com.almasb.IGU.GrupoContacto;
 import com.almasb.IGU.Grupos;
-import javafx.beans.property.StringProperty;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.almasb.utils.JsonParser;
+import com.almasb.utils.Requester;
 
 public class GruposDao {
+	
+	private Requester req = new Requester();
 
     public List<Grupos> getGruposContacto(int id) {
         // Método para recoger los grupos a los que está asociado un contacto.
         // Recibirá el id de un contacto como parámetro.
         // Devolverá una lista de grupos.
         ArrayList<Grupos> lista = new ArrayList<>();
-        Grupos g1 = new Grupos("Familia" );
-        lista.add(g1);
+        for (Map<String, String> data: JsonParser.jsonToMapList(req.requestGet("cg/"+id))){
+        	Grupos grupo = new Grupos();
+        	grupo.setNombre(data.get("nombre"));
+        	lista.add(grupo);
+        }
         return lista;
     }
 
-    public List<String> getGrupos(){
+    public List<Grupos> getGrupos(){
         // Método que crea un listado de todos los grupos creados hasta el momento.
         // Devolverá una lista.
-        ArrayList<String> grupos = new ArrayList<>();
-        grupos.add("Familia");
-        grupos.add("Amigos");
-        grupos.add("Trabajo");
-        return grupos;
+    	ArrayList<Grupos> lista = new ArrayList<>();
+        for (Map<String, String> data: JsonParser.jsonToMapList(req.requestGet("grupo"))){
+        	Grupos grupo = new Grupos();
+        	grupo.setNombre(data.get("nombre"));
+        	lista.add(grupo);
+        }
+        return lista;
     }
 
     public boolean borrarGrupo(String nombre){
         // Método para borrar un grupo.
         // Recibirá como parámetro el nombre del grupo en cuestión para proceder a borrarlo.
         // Devuelve boolean dependiendo si se borró correctamente o no
+    	try{
+    		req.requestPost("grupo/" + nombre, null);
+    	}catch(Exception e){
+    		e.printStackTrace();
+    		return false;
+    	}
         return true;
     }
 
@@ -40,7 +56,11 @@ public class GruposDao {
         // Método para crear un grupo.
         // Recibirá como parámetro el grupo a crear.
         // Devuelve boolean dependiendo si se añadió correctamente o no.
-        return true;
+    	Map<String, String> data = new HashMap<String, String>();
+    	data.put("nombre", grp.getNombre());
+    	
+    	req.requestPost("grupo", JsonParser.objectToJson(data));
+    	return true;
     }
 
     public boolean editarGrupo(String viejoNombre, String nuevoNombre){
@@ -54,6 +74,7 @@ public class GruposDao {
         // Método para añadir un GrupoContacto.
         // Recibirá como parámetros el GrupoContacto con el atributo id de su contacto
         // Devolverá un boolean indicando si se añadió de forma correcta o no.
+    	req.requestPost("cg/"+grupo.getId()+"/"+grupo.getNombre(), null);
         return true;
     }
 
@@ -61,6 +82,7 @@ public class GruposDao {
         // Método para añadir un contacto a un grupo.
         // Recibirá como parámetros el id del contacto y el grupo al que se le quiere quitar.
         // Devolverá un boolean indicando si se le eliminó de forma correcta o no.
+    	req.requestPost("del/cg/"+id+"/"+grupo, null);
         return true;
     }
 }

@@ -21,6 +21,12 @@ public class ContactosDao {
         // Método para borrar un contacto existente
         // Recibe como parámetro un contacto en el cual se encuentra su información
         // Devolverá un boolean dependiendo de si se borra correctamente o no
+    	try{
+    		req.requestPost("contacto/" + contacto.getId(), null);
+    	}catch(Exception e){
+    		e.printStackTrace();
+    		return false;
+    	}
         return true;
     }
 

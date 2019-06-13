@@ -1,11 +1,16 @@
 package com.almasb.DAO;
 
 import com.almasb.IGU.Contacto;
+import com.almasb.utils.JsonParser;
+import com.almasb.utils.Requester;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class ContactosDao {
+	
+	private Requester req = new Requester();
 
     public void anadirContacto(Contacto contacto) {
         // Método para crear un contacto nuevo
@@ -50,11 +55,14 @@ public class ContactosDao {
     public List<Contacto> getContactos() {
         // Método para buscar todos los contactos registrados hasta el momento.
         // Devolverá una lista con los contactos. En caso de no haber coincidencias devolverá lista vacía.
-        ArrayList<Contacto> lista =new ArrayList<Contacto>();
-        Contacto contacto1 = new Contacto(1, "Andres", "zópez");
-        Contacto contacto2 = new Contacto(2, "Carlos", "Juan");
-        lista.add(contacto1);
-        lista.add(contacto2);
+    	ArrayList<Contacto> lista =new ArrayList<Contacto>();
+        for (Map<String, String> c: JsonParser.jsonToMapList(req.requestGet("contacto"))){
+			Contacto contacto = new Contacto();
+			contacto.setApellido(c.get("apellido"));
+			contacto.setNombre(c.get("name"));
+			contacto.setId(Integer.parseInt(c.get("id")));
+			lista.add(contacto);
+		}
         return lista;
     }
 

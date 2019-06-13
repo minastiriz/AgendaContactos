@@ -1,15 +1,33 @@
 package com.almasb.DAO;
 
+import com.almasb.IGU.Grupos;
 import com.almasb.IGU.Telefono;
+import com.almasb.utils.JsonParser;
+import com.almasb.utils.Requester;
+
+import es.uji.ei1039.pr2.dao.ContGrupoDao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TelefonosDao {
+	
+	private Requester req = new Requester();
+	
     public ArrayList<Telefono> getTelefonosContacto(int id) {
         // Metodo para recoger los telefonos de un contacto
         // Recibirá el id de un contacto
         // Devolverá un listado con los telefonos que pertenecen a ese contacto. En caso de no tener devuelve lista vacía.
-        return new ArrayList<Telefono>();
+    	ArrayList<Telefono> lista = new ArrayList<>();
+    	for (Map<String, String> data: JsonParser.jsonToMapList(req.requestGet("telefono/"+id))){
+    		Telefono telefono = new Telefono();
+    		telefono.setId(id);
+    		telefono.setEtiquetaTelefono(data.get("etiqueta"));
+    		telefono.setNumero(Integer.parseInt(data.get("telefono")));
+    		lista.add(telefono);
+    	}
+    	return lista;
     }
 
     public boolean existeTelefono(int numero) {
@@ -23,6 +41,12 @@ public class TelefonosDao {
         // Método para añadir un nuevo telefono a un contacto
         // Recibirá como parámetros el id del contacto y el telefono a añadir en cuestion
         // Devolvera un boolean dependiendo si se añade correctamente
+    	Map<String, String> data = new HashMap<String, String>();
+    	data.put("id", ""+tlf.getId());
+    	data.put("telefono", ""+tlf.getNumero());
+    	data.put("etiqueta", tlf.getEtiquetaTelefono());
+    	
+    	req.requestPost("telefono", JsonParser.objectToJson(data));
         return true;
     }
 
@@ -30,7 +54,13 @@ public class TelefonosDao {
         // Método para borrar un telefono a un contacto
         // Recibirá como parámetros el id del contacto y el telefono en cuestion
         // Devolverá un boolean dependiendo de si se ha borrado correctamente
-        return  true;
+    	try{
+    		req.requestPost("telefono/" + telefono, null);
+    	}catch(Exception e){
+    		e.printStackTrace();
+    		return false;
+    	}
+        return true;
     }
 
     public boolean editarTelefono(int id, String antiguoNum, String nuevoNum, String nuevaEtiqueta) {

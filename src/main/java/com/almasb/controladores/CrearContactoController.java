@@ -119,7 +119,7 @@ public class CrearContactoController implements Initializable {
             listaGrupos.add(grupo.getNombre());
             comboBGrupos.getItems().remove(comboBGrupos.getValue());
             alert.setAlertType(Alert.AlertType.INFORMATION);
-            aviso[0] = "Grupo añadido";
+            aviso[0] = "Grupo " + grupo.getNombre()+" añadido";
             aviso[1] = "Se ha añadido correctamente, sigue añadiendole grupos si lo deseas";
 
         }

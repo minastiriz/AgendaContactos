@@ -29,7 +29,7 @@ public class GruposDao {
         // Recibirá el id de un contacto como parámetro.
         // Devolverá una lista de grupos.
         ArrayList<Grupos> lista = new ArrayList<>();
-        for (Map<String, String> data: JsonParser.jsonToMapList(req.requestGet("cg/"+id))){
+        for (Map<String, String> data: JsonParser.jsonToMapList(req.requestGet("cg/c/"+id))){
         	Grupos grupo = new Grupos();
         	grupo.setNombre(data.get("nombre"));
         	lista.add(grupo);
@@ -54,7 +54,14 @@ public class GruposDao {
         // Recibirá como parámetro el nombre del grupo en cuestión para proceder a borrarlo.
         // Devuelve boolean dependiendo si se borró correctamente o no
     	try{
-    		req.requestPost("grupo/" + nombre, null);
+            List<Contacto> listaContactos = contactosDao.getContactosNonmbreGrupo(nombre);
+            for (Contacto contacto : listaContactos) {
+                GrupoContacto gpc = new GrupoContacto();
+                gpc.setId(contacto.getId());
+                gpc.setNombre(nombre);
+                borrarContactoGrupo(contacto.getId(), nombre);
+            }
+    		req.requestPost("grupo/" + nombre.replace(" ", "%20"), null);
     	}catch(Exception e){
     		e.printStackTrace();
     		return false;
@@ -88,6 +95,7 @@ public class GruposDao {
                 gpc.setId(contacto.getId());
                 gpc.setNombre(nuevoNombre);
                 addContactoGrupo(gpc);
+                borrarContactoGrupo(contacto.getId(), viejoNombre);
             }
             if(borrarGrupo(viejoNombre))
                 return true;
@@ -99,7 +107,7 @@ public class GruposDao {
         // Método para añadir un GrupoContacto.
         // Recibirá como parámetros el GrupoContacto con el atributo id de su contacto
         // Devolverá un boolean indicando si se añadió de forma correcta o no.
-    	req.requestPost("cg/"+grupo.getId()+"/"+grupo.getNombre(), null);
+    	req.requestPost("cg/"+grupo.getId()+"/"+grupo.getNombre().replace(" ", "%20"), null);
         return true;
     }
 
@@ -107,7 +115,7 @@ public class GruposDao {
         // Método para añadir un contacto a un grupo.
         // Recibirá como parámetros el id del contacto y el grupo al que se le quiere quitar.
         // Devolverá un boolean indicando si se le eliminó de forma correcta o no.
-    	req.requestPost("del/cg/"+id+"/"+grupo, null);
+    	req.requestPost("cg/del/"+id+"/"+grupo.replace(" ", "%20"), null);
         return true;
     }
 }

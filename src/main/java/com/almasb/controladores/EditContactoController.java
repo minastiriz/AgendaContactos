@@ -88,9 +88,13 @@ public class EditContactoController {
     void addGrupo(MouseEvent event) throws IOException {
         // LLevará a una nueva página que asignará al usuario un nuevo grupo (que no pertenezca de momento)
         List<Grupos> listaGrupos = grupoDao.getGrupos();
+        List<Grupos> gruposPert = grupoDao.getGruposContacto(contacto.getId());
         ArrayList<String> aux = new ArrayList<String>();
-        for(Grupos grupo : listaGrupos) aux.add(grupo.getNombre());
-        listaGrupos.removeAll(cmboxGrupos.getItems());
+        for(Grupos grupo : listaGrupos) {
+            if(!gruposPert.contains(grupo))
+                aux.add(grupo.getNombre());
+        }
+
         Stage stageEdit = new Stage();
         FXMLLoader loader = new FXMLLoader();
         AnchorPane root = (AnchorPane) loader.load(getClass().getResource("/view/addGrupoContacto.fxml").openStream());
@@ -361,19 +365,17 @@ public class EditContactoController {
         tlf.setEtiquetaTelefono(etiqueta);
         tlf.setNumero(Integer.parseInt(telefono));
 
-        if(!telefonosDao.existeTelefono(Integer.parseInt(telefono)) && telefonosDao.addTelefono(tlf)){
+        if(!telefonosDao.existeTelefono(Integer.parseInt(telefono)) && telefonosDao.editarTelefono(contacto.getId(), valoresSeparados[1], telefono, etiqueta)){
             // añadido
-            if(telefonosDao.borrarTelefono(contacto.getId(), valoresSeparados[1])){
-                // bien
-                String valor = etiqueta+": "+telefono;
-                cmboxTlfs.getItems().set(cmboxTlfs.getItems().indexOf(cmboxTlfs.getValue()), valor);
-                cmboxTlfs.getSelectionModel().select(0);
+            // bien
+            String valor = etiqueta+": "+telefono;
+            cmboxTlfs.getItems().set(cmboxTlfs.getItems().indexOf(cmboxTlfs.getValue()), valor);
+            cmboxTlfs.getSelectionModel().select(0);
 
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Telefono modificado");
-                alert.setHeaderText("El telefono fue modificado correctamente");
-                alert.showAndWait();
-            }
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Telefono modificado");
+            alert.setHeaderText("El telefono fue modificado correctamente");
+            alert.showAndWait();
         }else{
             // No añadido
             Alert alert = new Alert(Alert.AlertType.ERROR);

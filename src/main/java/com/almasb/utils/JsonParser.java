@@ -29,6 +29,9 @@ public class JsonParser {
 	}
 	
 	public static Map<String, String> jsonToMap(String json){
+		if (json == null){
+			return new HashMap<String, String>();
+		}
 		String treatedJson = json.replaceAll("\\{", "");
 		treatedJson = treatedJson.replaceAll("\\}", "");
 		treatedJson = treatedJson.replaceAll(COMILLA, "");
@@ -43,10 +46,12 @@ public class JsonParser {
 	
 	public static List<Map<String, String>> jsonToMapList(String json){
 		List<Map<String, String>> dev = new ArrayList<Map<String, String>>();
-		String treatedJson = json.substring(2, json.length()-2);
-		String[] splitedJson = treatedJson.split("\\},\\{");
-		for (String jsonObject: splitedJson){
-			dev.add(jsonToMap(jsonObject));
+		if(json.length() > 4){
+			String treatedJson = json.substring(2, json.length()-2);
+			String[] splitedJson = treatedJson.split("\\},\\{");
+			for (String jsonObject: splitedJson){
+				dev.add(jsonToMap(jsonObject));
+			}
 		}
 		return dev;
 	}

@@ -7,6 +7,7 @@ import com.almasb.utils.Requester;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class TelefonosDao {
 	
@@ -65,5 +66,9 @@ public class TelefonosDao {
         // Recibirá como parámetros el id del contacto, el antiguo numero y los nuevos datos
         // Devolverá un boolean dependiendo de si se ha modificado correctamente
         return true;
+    }
+
+    public Set<String> etiquetasTelefonosDisponibles() {
+    	return null;
     }
 }

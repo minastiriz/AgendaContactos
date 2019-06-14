@@ -3,6 +3,7 @@ package com.almasb.DAO;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import com.almasb.IGU.Email;
 import com.almasb.utils.JsonParser;
@@ -56,5 +57,9 @@ public class EmailDao {
     public boolean existeCorreo(String text) {
         return false;
 
+    }
+
+    public Set<String> etiquetasEmailDisponibles() {
+        return null;
     }
 }

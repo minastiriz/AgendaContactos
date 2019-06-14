@@ -22,6 +22,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Set;
 
 
 public class CrearContactoController implements Initializable {
@@ -35,7 +36,8 @@ public class CrearContactoController implements Initializable {
     private ArrayList<Email> listaEmail;
     private ArrayList<String> listaGrupos;
     private Contacto contacto;
-
+    private Set<String> etiquetasEmailPosibles;
+    private Set<String> etiquetasTelefonoPosibles;
 
     @FXML
     private JFXTextField nombre;
@@ -72,6 +74,7 @@ public class CrearContactoController implements Initializable {
 
     @FXML
     private JFXButton btnVolver;
+
 
     @FXML
     void anadirCorreo(ActionEvent event) throws Exception{
@@ -130,7 +133,7 @@ public class CrearContactoController implements Initializable {
     void anadirTelefono(ActionEvent event) throws Exception{
         Alert alert = new Alert(Alert.AlertType.ERROR);
         String[] aviso = {"Telefono no añadido", "Completa los campos correctamente"};
-        if (!estaVacio(etiquetaTelefono) && !estaVacio(numero) && Utils.isNumeric(numero.getText()) /*&& Utils.esNumeric(numero.getText())*/){
+        if (!estaVacio(etiquetaTelefono) && !estaVacio(numero) && Utils.isNumeric(numero.getText()) ){
             Telefono telefono = new Telefono();
             telefono.setNumero(Integer.parseInt(numero.getText()));
             telefono.setEtiquetaTelefono(etiquetaTelefono.getText());
@@ -197,6 +200,7 @@ public class CrearContactoController implements Initializable {
         listaEmail = new ArrayList<Email>();
         listaGrupos = new ArrayList<String>();
         contacto = new Contacto();
+
     }
 
     private Boolean estaVacio(JFXTextField jfxTextField){
@@ -228,6 +232,11 @@ public class CrearContactoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         List<Grupos> listaGrupos= gruposDao.getGrupos();
+
+        //Etiquetas disponibles
+        etiquetasTelefonoPosibles=telefonosDao.etiquetasTelefonosDisponibles();
+        etiquetasEmailPosibles=emailDao.etiquetasEmailDisponibles();
+
         ArrayList<String> aux = new ArrayList<String>();
         for(Grupos grupo : listaGrupos) aux.add(grupo.getNombre());
         ObservableList<String> listaGruposEncapsulados = FXCollections.observableArrayList(aux);

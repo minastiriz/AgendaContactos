@@ -72,16 +72,13 @@ public class GruposController implements Initializable {
         //Hace referencia al boton de crear, creará un grupo con el nombre en el txtfield
         Grupos grp = new Grupos();
         grp.setNombre(txtCrearGrupo.getText());
-        if(txtCrearGrupo != null && !txtCrearGrupo.getText().equals("") && grupoDao.existeGrupo(grp)){
-            boolean res = grupoDao.crearGrupo(grp);
-            if(res) {
-                gruposBox.getItems().add(txtCrearGrupo.getText());
-                txtCrearGrupo.setText("");
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Grupo creado");
-                alert.setHeaderText("El grupo se creó correctamente");
-                alert.showAndWait();
-            }
+        if(txtCrearGrupo != null && !txtCrearGrupo.getText().equals("") && !grupoDao.existeGrupo(grp) && grupoDao.crearGrupo(grp)){
+            gruposBox.getItems().add(txtCrearGrupo.getText());
+            txtCrearGrupo.setText("");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Grupo creado");
+            alert.setHeaderText("El grupo se creó correctamente");
+            alert.showAndWait();
         }else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error al crear");
@@ -117,8 +114,7 @@ public class GruposController implements Initializable {
     public void realizaModificacion(String nombre){
         // Este metodo recibe el nombre modificado de parte de la vista de modificacion
 
-        boolean res = grupoDao.editarGrupo(gruposBox.getValue(), nombre);
-        if(res){
+        if(grupoDao.editarGrupo(gruposBox.getValue(), nombre)){
             gruposBox.getItems().set(gruposBox.getItems().indexOf(gruposBox.getValue()), nombre);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Grupo modificado");

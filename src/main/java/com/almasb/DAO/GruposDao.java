@@ -78,24 +78,21 @@ public class GruposDao {
         // Recibirá como parámetro el viejo nombre que tenía y el nuevo nombre que tendrá.
         // Devuelve boolean dependiendo si se editó correctamente o hubieron fallos.
 
-        // Recoge lista de contactos
-        /*
         List<Contacto> listaContactos = contactosDao.getContactosNonmbreGrupo(viejoNombre);
         Grupos grupo = new Grupos();
         grupo.setNombre(nuevoNombre);
 
-        if(!existeGrupo(grupo) && crearGrupo(grupo)){
-            for(Contacto contacto : listaContactos)
-
-
-            addContactoGrupo(grupo)
+        if(!existeGrupo(grupo) && crearGrupo(grupo)) {
+            for (Contacto contacto : listaContactos) {
+                GrupoContacto gpc = new GrupoContacto();
+                gpc.setId(contacto.getId());
+                gpc.setNombre(nuevoNombre);
+                addContactoGrupo(gpc);
+            }
+            if(borrarGrupo(viejoNombre))
+                return true;
         }
-        //
-        */
-        return true;
-
-
-
+        return false;
     }
 
     public boolean addContactoGrupo (GrupoContacto grupo){

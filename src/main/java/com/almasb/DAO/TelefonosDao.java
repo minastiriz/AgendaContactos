@@ -1,11 +1,8 @@
 package com.almasb.DAO;
 
-import com.almasb.IGU.Grupos;
 import com.almasb.IGU.Telefono;
 import com.almasb.utils.JsonParser;
 import com.almasb.utils.Requester;
-
-import es.uji.ei1039.pr2.dao.ContGrupoDao;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,7 +21,7 @@ public class TelefonosDao {
     		Telefono telefono = new Telefono();
     		telefono.setId(id);
     		telefono.setEtiquetaTelefono(data.get("etiqueta"));
-    		telefono.setNumero(Integer.parseInt(data.get("telefono")));
+    		telefono.setNumero(Integer.parseInt(data.get("numero")));
     		lista.add(telefono);
     	}
     	return lista;
@@ -43,7 +40,7 @@ public class TelefonosDao {
         // Devolvera un boolean dependiendo si se añade correctamente
     	Map<String, String> data = new HashMap<String, String>();
     	data.put("id", ""+tlf.getId());
-    	data.put("telefono", ""+tlf.getNumero());
+    	data.put("numero", ""+tlf.getNumero());
     	data.put("etiqueta", tlf.getEtiquetaTelefono());
     	
     	req.requestPost("telefono", JsonParser.objectToJson(data));

@@ -2,11 +2,13 @@ com\almasb\IGU\Telefono.class
 com\almasb\controladores\CrearContactoController.class
 com\almasb\DAO\TelefonosDao.class
 com\almasb\IGU\Grupos.class
+com\almasb\utils\JsonParser.class
 com\almasb\DAO\GruposDao.class
 com\almasb\IGU\Email.class
 com\almasb\DAO\ContactosDao.class
 com\almasb\controladores\AddEmailContacto.class
 com\almasb\controladores\EditEmailContactoController.class
+com\almasb\utils\Requester.class
 com\almasb\IGU\Contacto.class
 com\almasb\controladores\AddGrupoContactoController.class
 com\almasb\Utils.class

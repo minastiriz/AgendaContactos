@@ -14,6 +14,13 @@ public class GruposDao {
 	
 	private Requester req = new Requester();
 
+	public boolean existeGrupo(Grupos grupo){
+	    // Método que comprobara si existe un grupo que intentemos crear o editar
+        // Recibe como parámetro el grupo que deseamos comprobar si existe
+        // Devuelve un boolean indicando si se creó correctamente o no
+        return getGrupos().contains (grupo);
+    }
+
     public List<Grupos> getGruposContacto(int id) {
         // Método para recoger los grupos a los que está asociado un contacto.
         // Recibirá el id de un contacto como parámetro.

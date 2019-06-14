@@ -33,7 +33,7 @@ public class EditTelefonoContactoController {
         }else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error al modificar");
-            alert.setHeaderText("Introduzca, al menos, un telefono");
+            alert.setHeaderText("Rellene los campos correctamente");
             alert.showAndWait();
         }
     }

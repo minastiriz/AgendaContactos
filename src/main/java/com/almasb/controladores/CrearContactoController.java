@@ -227,8 +227,10 @@ public class CrearContactoController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        List<String> listaGrupos= gruposDao.getGrupos();
-        ObservableList<String> listaGruposEncapsulados = FXCollections.observableArrayList(listaGrupos);
+        List<Grupos> listaGrupos= gruposDao.getGrupos();
+        ArrayList<String> aux = new ArrayList<String>();
+        for(Grupos grupo : listaGrupos) aux.add(grupo.getNombre());
+        ObservableList<String> listaGruposEncapsulados = FXCollections.observableArrayList(aux);
         this.comboBGrupos.setItems(listaGruposEncapsulados);
         initListas();
 

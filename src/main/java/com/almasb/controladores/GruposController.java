@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -69,9 +70,9 @@ public class GruposController implements Initializable {
     @FXML
     void crearGrupo(MouseEvent event) {
         //Hace referencia al boton de crear, creará un grupo con el nombre en el txtfield
-        if(txtCrearGrupo != null && !txtCrearGrupo.getText().equals("")){
-            Grupos grp = new Grupos();
-            grp.setNombre(txtCrearGrupo.getText());
+        Grupos grp = new Grupos();
+        grp.setNombre(txtCrearGrupo.getText());
+        if(txtCrearGrupo != null && !txtCrearGrupo.getText().equals("") && grupoDao.existeGrupo(grp)){
             boolean res = grupoDao.crearGrupo(grp);
             if(res) {
                 gruposBox.getItems().add(txtCrearGrupo.getText());
@@ -141,8 +142,10 @@ public class GruposController implements Initializable {
     @FXML
     private ObservableList<String> getItemsBox(){
         // Este metodo permitirá comunicar al controlador con el modelo para recoger los datos de los grupos
-        List<String> nombresGrupos = grupoDao.getGrupos();
-        ObservableList<String> itemsBox = FXCollections.observableArrayList(nombresGrupos);
+        List<Grupos> nombresGrupos = grupoDao.getGrupos();
+        ArrayList<String> aux = new ArrayList<String>();
+        for(Grupos grupo : nombresGrupos) aux.add(grupo.getNombre());
+        ObservableList<String> itemsBox = FXCollections.observableArrayList(aux);
         return itemsBox;
     }
 

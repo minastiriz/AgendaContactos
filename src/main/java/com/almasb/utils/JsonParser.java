@@ -46,7 +46,7 @@ public class JsonParser {
 	
 	public static List<Map<String, String>> jsonToMapList(String json){
 		List<Map<String, String>> dev = new ArrayList<Map<String, String>>();
-		if(json.length() > 4){
+		if(json != null && json.length() > 4){
 			String treatedJson = json.substring(2, json.length()-2);
 			String[] splitedJson = treatedJson.split("\\},\\{");
 			for (String jsonObject: splitedJson){

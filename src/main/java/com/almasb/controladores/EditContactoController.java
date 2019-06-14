@@ -87,13 +87,15 @@ public class EditContactoController {
     @FXML
     void addGrupo(MouseEvent event) throws IOException {
         // LLevará a una nueva página que asignará al usuario un nuevo grupo (que no pertenezca de momento)
-        List<String> listaGrupos = grupoDao.getGrupos();
+        List<Grupos> listaGrupos = grupoDao.getGrupos();
+        ArrayList<String> aux = new ArrayList<String>();
+        for(Grupos grupo : listaGrupos) aux.add(grupo.getNombre());
         listaGrupos.removeAll(cmboxGrupos.getItems());
         Stage stageEdit = new Stage();
         FXMLLoader loader = new FXMLLoader();
         AnchorPane root = (AnchorPane) loader.load(getClass().getResource("/view/addGrupoContacto.fxml").openStream());
         AddGrupoContactoController editController = (AddGrupoContactoController) loader.getController();
-        editController.recibeController(this, listaGrupos);
+        editController.recibeController(this, aux);
         Scene escenario = new Scene(root);
         stageEdit.setTitle("Editar Grupos del contacto");
         stageEdit.setScene(escenario);

@@ -14,7 +14,9 @@ C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\controladores\Ad
 C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\DAO\EmailDao.java
 C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\DAO\ContactosDao.java
 C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\controladores\CrearContactoController.java
+C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\utils\Requester.java
 C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\controladores\EditGrupoController.java
+C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\utils\JsonParser.java
 C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\controladores\EditEmailContactoController.java
 C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\logica\FXApp.java
 C:\Users\andre\Desktop\AgendaContactos\src\main\java\com\almasb\controladores\PaginaContactosController.java

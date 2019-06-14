@@ -2,6 +2,7 @@ package com.almasb.DAO;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -55,11 +56,22 @@ public class EmailDao {
     }
 
     public boolean existeCorreo(String text) {
-        return false;
-
+    	for (Map<String, String> data: JsonParser.jsonToMapList(req.requestGet("email"))){
+    		if (data.get("correo").equals(text)){
+    			return true;
+    		}
+    	}
+    	return false;
     }
 
     public Set<String> etiquetasEmailDisponibles() {
-        return null;
+    	Set<String> s = new HashSet<String>();
+    	String l = req.requestGet("email/etq");
+    	l = l.substring(1, l.length()-1);
+    	l = l.replaceAll("\"", "");
+    	for (String etiqueta: l.split(",")){
+    		s.add(etiqueta);
+    	}
+    	return s;
     }
 }

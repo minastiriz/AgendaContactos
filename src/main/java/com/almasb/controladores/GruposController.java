@@ -116,6 +116,7 @@ public class GruposController implements Initializable {
     @FXML
     public void realizaModificacion(String nombre){
         // Este metodo recibe el nombre modificado de parte de la vista de modificacion
+
         boolean res = grupoDao.editarGrupo(gruposBox.getValue(), nombre);
         if(res){
             gruposBox.getItems().set(gruposBox.getItems().indexOf(gruposBox.getValue()), nombre);

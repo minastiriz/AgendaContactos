@@ -140,10 +140,9 @@ public class EditContactoController {
     public void recogeDatosAddMail (Email mail){
         // LLamada al modelo para crear el objeto
         mail.setId(contacto.getId());
-        boolean added = mailDao.addEmailContacto(mail);
 
         // Actualizacion de la vista
-        if(added){
+        if(!mailDao.existeCorreo(mail.getCorreo()) && mailDao.addEmailContacto(mail)){
             String valor = mail.getEtiquetaEmail()+": "+mail.getCorreo();
             cmboxMails.getItems().add(valor);
             cmboxMails.getSelectionModel().select(0);
@@ -178,10 +177,9 @@ public class EditContactoController {
     public void recogeDatosAddTlf (Telefono tlf){
         // Recibe los datos y hace una llamada al modelo para crear el telefono
         tlf.setId(contacto.getId());
-        boolean added = telefonosDao.addTelefono(tlf);
 
         // Actualizacion de la vista
-        if(added){
+        if(!telefonosDao.existeTelefono(tlf.getNumero()) && telefonosDao.addTelefono(tlf)){
             String valor = tlf.getEtiquetaTelefono()+": "+tlf.getNumero();
             cmboxTlfs.getItems().add(valor);
             cmboxTlfs.getSelectionModel().select(0);
@@ -196,7 +194,6 @@ public class EditContactoController {
             alert.setHeaderText("Hubo un problema al intentar añadir el nuevo telefono");
             alert.showAndWait();
         }
-
     }
 
     @FXML
@@ -302,19 +299,26 @@ public class EditContactoController {
         // LLamada al modelo para crear el objeto
         String valores = cmboxMails.getValue();
         String[] valoresSeparados = valores.split(": ");
-        boolean added = mailDao.editEmailContacto(contacto.getId(), valoresSeparados[1], mailNuevo, etiqueta);
+        Email mail = new Email();
+        mail.setId(contacto.getId());
+        mail.setEtiquetaEmail(etiqueta);
+        mail.setCorreo(mailNuevo);
 
-        // Actualizacion de la vista
-        if(added){
-            String valor = etiqueta+": "+mailNuevo;
-            cmboxMails.getItems().set(cmboxMails.getItems().indexOf(cmboxMails.getValue()), valor);
-            cmboxMails.getSelectionModel().select(0);
+        if(!mailDao.existeCorreo(mailNuevo) && mailDao.addEmailContacto(mail)){
+            // añadido
+            if(mailDao.borrarMail(contacto.getId(), valoresSeparados[1])){
+                // bien
+                String valor = etiqueta+": "+mailNuevo;
+                cmboxMails.getItems().set(cmboxMails.getItems().indexOf(cmboxMails.getValue()), valor);
+                cmboxMails.getSelectionModel().select(0);
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Email modificado");
-            alert.setHeaderText("El email fue modificado correctamente");
-            alert.showAndWait();
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Email modificado");
+                alert.setHeaderText("El email fue modificado correctamente");
+                alert.showAndWait();
+            }
         }else{
+            // No añadido
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error al modificar");
             alert.setHeaderText("Hubo un problema al intentar modificar el nuevo email");
@@ -352,19 +356,26 @@ public class EditContactoController {
         // LLamada al modelo para crear el objeto
         String valores = cmboxTlfs.getValue();
         String[] valoresSeparados = valores.split(": ");
-        boolean added = telefonosDao.editarTelefono(contacto.getId(), valoresSeparados[1], telefono, etiqueta);
+        Telefono tlf = new Telefono();
+        tlf.setId(contacto.getId());
+        tlf.setEtiquetaTelefono(etiqueta);
+        tlf.setNumero(Integer.parseInt(telefono));
 
-        // Actualizacion de la vista
-        if(added){
-            String valor = etiqueta+": "+telefono;
-            cmboxTlfs.getItems().set(cmboxTlfs.getItems().indexOf(cmboxTlfs.getValue()), valor);
-            cmboxTlfs.getSelectionModel().select(0);
+        if(!telefonosDao.existeTelefono(Integer.parseInt(telefono)) && telefonosDao.addTelefono(tlf)){
+            // añadido
+            if(telefonosDao.borrarTelefono(contacto.getId(), valoresSeparados[1])){
+                // bien
+                String valor = etiqueta+": "+telefono;
+                cmboxTlfs.getItems().set(cmboxTlfs.getItems().indexOf(cmboxTlfs.getValue()), valor);
+                cmboxTlfs.getSelectionModel().select(0);
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Telefono modificado");
-            alert.setHeaderText("El telefono fue modificado correctamente");
-            alert.showAndWait();
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Telefono modificado");
+                alert.setHeaderText("El telefono fue modificado correctamente");
+                alert.showAndWait();
+            }
         }else{
+            // No añadido
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error al modificar");
             alert.setHeaderText("Hubo un problema al intentar modificar el nuevo telefono");

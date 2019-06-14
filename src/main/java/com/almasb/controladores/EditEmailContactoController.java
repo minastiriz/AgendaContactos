@@ -25,7 +25,7 @@ public class EditEmailContactoController {
 
     @FXML
     void guardarCambios(MouseEvent event) {
-        if(!txtEmail.equals("") && !txtEtiqueta.equals("")){
+        if(!txtEmail.getText().equals("") && !txtEtiqueta.getText().equals("")){
             controller.recogeDatosEditMail(txtEmail.getText(), txtEtiqueta.getText());
             Stage stage = (Stage) btnSave.getScene().getWindow();
             stage.close();

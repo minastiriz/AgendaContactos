@@ -53,13 +53,6 @@ public class EmailDao {
         return true;
     }
 
-    public boolean editEmailContacto(int id, String dirAntigua, String dirNueva, String etiqNueva){
-        // Método que cambiará los datos de un email
-        // Recibirá el id del contacto al que pertenece, el antiguo correo y los dos campos actualizados (direccion y etiqueta nueva)
-        // Devolverá un boolean indicando si la modificación se completó correctamente.
-        return true;
-    }
-
     public boolean existeCorreo(String text) {
         return false;
 

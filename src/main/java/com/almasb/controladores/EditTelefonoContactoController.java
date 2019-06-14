@@ -26,7 +26,7 @@ public class EditTelefonoContactoController {
 
     @FXML
     void guardarCambios(MouseEvent event) {
-        if(!txtTelefono.equals("") && !txtEtiqueta.equals("") && Utils.isNumeric(txtTelefono.getText())){
+        if(!txtTelefono.getText().equals("") && !txtEtiqueta.getText().equals("") && Utils.isNumeric(txtTelefono.getText())){
             controller.recogeDatosEditTelefono(txtTelefono.getText(), txtEtiqueta.getText());
             Stage stage = (Stage) btnSave.getScene().getWindow();
             stage.close();

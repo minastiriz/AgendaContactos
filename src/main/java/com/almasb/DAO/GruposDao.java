@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.almasb.IGU.Contacto;
 import com.almasb.IGU.GrupoContacto;
 import com.almasb.IGU.Grupos;
 import com.almasb.utils.JsonParser;
@@ -13,6 +14,8 @@ import com.almasb.utils.Requester;
 public class GruposDao {
 	
 	private Requester req = new Requester();
+	private ContactosDao contactosDao = new ContactosDao();
+	private GrupoContacto grupoContacto = new GrupoContacto();
 
 	public boolean existeGrupo(Grupos grupo){
 	    // Método que comprobara si existe un grupo que intentemos crear o editar
@@ -74,7 +77,25 @@ public class GruposDao {
         // Método para editar un grupo.
         // Recibirá como parámetro el viejo nombre que tenía y el nuevo nombre que tendrá.
         // Devuelve boolean dependiendo si se editó correctamente o hubieron fallos.
+
+        // Recoge lista de contactos
+        /*
+        List<Contacto> listaContactos = contactosDao.getContactosNonmbreGrupo(viejoNombre);
+        Grupos grupo = new Grupos();
+        grupo.setNombre(nuevoNombre);
+
+        if(!existeGrupo(grupo) && crearGrupo(grupo)){
+            for(Contacto contacto : listaContactos)
+
+
+            addContactoGrupo(grupo)
+        }
+        //
+        */
         return true;
+
+
+
     }
 
     public boolean addContactoGrupo (GrupoContacto grupo){

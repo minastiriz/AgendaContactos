@@ -103,20 +103,6 @@ public class ContactosDao {
         return lista;
     }
 
-    public List<Contacto> getContactosEtiquetaEmail(String etiqueta) {
-        // Método para buscar contactos por etiqueta de mail
-        // Recibirá como parámetro el nombre de la etiqueta a buscar
-        // Devolverá una lista con los contactos que coincidan con la busqueda. En caso de no haber coincidencias devolverá lista vacía.
-        return new ArrayList<Contacto>();
-    }
-
-    public List<Contacto> getContactosEtiquetaTelefono(String etiqueta) {
-        // Método para buscar contactos por etiqueta de telefono
-        // Recibirá como parámetro el nombre de la etiqueta a buscar
-        // Devolverá una lista con los contactos que coincidan con la busqueda. En caso de no haber coincidencias devolverá lista vacía.
-        return new ArrayList<Contacto>();
-    }
-
     public List<Contacto> getContactos() {
         // Método para buscar todos los contactos registrados hasta el momento.
         // Devolverá una lista con los contactos. En caso de no haber coincidencias devolverá lista vacía.

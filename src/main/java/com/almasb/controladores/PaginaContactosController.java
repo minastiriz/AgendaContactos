@@ -193,17 +193,9 @@ public class PaginaContactosController implements Initializable {
                     loadData(contactosDao.getContactos(textFieldContenido, "Apellidos"));
                     System.out.println("Buscar por apellido");
                     break;
-                case ("Teléfono"):
-                    loadData(contactosDao.getContactosEtiquetaTelefono(textFieldContenido));
-                    System.out.println("Buscar por Telefono");
-                    break;
-                case ("E-mail"):
-                    loadData(contactosDao.getContactosEtiquetaEmail(textFieldContenido));
-                    System.out.println("Buscar por Telefono");
-                    break;
                 case ("Grupo"):
                     loadData(contactosDao.getContactosNonmbreGrupo(textFieldContenido));
-                    System.out.println("Buscar por Telefono");
+                    System.out.println("Buscar por Grupo");
                     break;
                 //Por defecto busco x nombre
                 case ("Nombre"):
@@ -243,7 +235,7 @@ public class PaginaContactosController implements Initializable {
 
     private void loadData(List<Contacto>listaContactos) {
         tablaContactos.getItems().addAll(listaContactos);
-        ObservableList<String> listaTipoBusqueda = FXCollections.observableArrayList("Nombre", "Apellidos", "Teléfono", "E-mail", "Grupo");
+        ObservableList<String> listaTipoBusqueda = FXCollections.observableArrayList("Nombre", "Apellidos", "Grupo");
         this.tipoBusqueda.setItems(listaTipoBusqueda);
     }
 

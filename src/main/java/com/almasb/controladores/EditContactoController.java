@@ -91,8 +91,14 @@ public class EditContactoController {
         List<Grupos> gruposPert = grupoDao.getGruposContacto(contacto.getId());
         ArrayList<String> aux = new ArrayList<String>();
         for(Grupos grupo : listaGrupos) {
-            if(!gruposPert.contains(grupo))
-                aux.add(grupo.getNombre());
+            boolean isMine = false;
+            for(Grupos g: gruposPert) {
+                if(g.getNombre().equals(grupo.getNombre())) {
+                    isMine = true;
+                    break;
+                }
+            }
+            if(!isMine) aux.add(grupo.getNombre());
         }
 
         Stage stageEdit = new Stage();

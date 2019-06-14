@@ -1,4 +1,2 @@
-Upendra, Programmer  ||  TELEFONOS:   ||  EMAILS:   ||  GRUPOS: 
-Upendra, Programmer  ||  TELEFONOS:   ||  EMAILS:   ||  GRUPOS: 
-Vicente, Lopez  ||  TELEFONOS:   etiqueta: Familia, telefono: 658921237  etiqueta: prueba, telefono: 0  etiqueta: aaa, telefono: 964152789  etiqueta: prueba numero, telefono: 1874596327  ||  EMAILS:   etiqueta: prueba email, correo: dddddddddddd  ||  GRUPOS: 
-Vicente, Lopez  ||  TELEFONOS:   etiqueta: aaaa1, telefono: 112223334  etiqueta: bbb, telefono: 964785123  etiqueta: aaa, telefono: 785475218  etiqueta: aaa, telefono: 74896321  etiqueta: bbb, telefono: 111111111  ||  EMAILS:   ||  GRUPOS: 
+aaaa, eeeee  ||  TELEFONOS:   ||  EMAILS:   etiqueta: aaa, correo: eeee  ||  GRUPOS: 
+pepe, marte  ||  TELEFONOS:   ||  EMAILS:   etiqueta: sssss, correo: ckdsnvkds222  etiqueta: 42edd3, correo: 3rd3d3frd3  ||  GRUPOS:   nombre: prueba 2  nombre: prueba 11  nombre: prueba 1  nombre: prueba grupos  nombre: prueba grupos2  nombre: cambiado  nombre: prueba z  nombre: pruebas

@@ -6,192 +6,107 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.almasb.controladores.CrearContactoController">
    <children>
-      <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label text="Añadir contacto">
-                     <HBox.margin>
-                        <Insets left="80.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font size="40.0" />
-                     </font>
-                  </Label>
-               </children>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <JFXTextField fx:id="nombre" promptText="Nombre" />
-                  <JFXTextField fx:id="apellido" promptText="Apellido">
-                     <HBox.margin>
-                        <Insets left="50.0" right="50.0" />
-                     </HBox.margin>
-                  </JFXTextField>
-               </children>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-               <VBox.margin>
-                  <Insets left="70.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label text="Añadir Telefonos">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="10.0" />
-                     </HBox.margin>
-                  </Label>
-               </children>
-               <VBox.margin>
-                  <Insets left="70.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <JFXTextField fx:id="numero" promptText="Telefono">
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
-                  </JFXTextField>
-                  <JFXTextField fx:id="etiquetaTelefono" promptText="Etiqueta">
-                     <padding>
-                        <Insets left="50.0" right="50.0" />
-                     </padding>
-                  </JFXTextField>
-                  <JFXButton fx:id="btnAnadirTelefono" onAction="#anadirTelefono" text="Añadir">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></JFXButton>
-               </children>
-               <VBox.margin>
-                  <Insets left="70.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label text="Añadir E-mails">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
-                  </Label>
-               </children>
-               <VBox.margin>
-                  <Insets left="70.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <JFXTextField fx:id="correo" promptText="E-mail">
-                     <HBox.margin>
-                        <Insets left="10.0" />
-                     </HBox.margin>
-                  </JFXTextField>
-                  <JFXTextField fx:id="etiquetaCorreo" promptText="Etiqueta">
-                     <HBox.margin>
-                        <Insets left="50.0" right="50.0" />
-                     </HBox.margin>
-                  </JFXTextField>
-                  <JFXButton fx:id="btnAnadirCorreo" onAction="#anadirCorreo" text="Añadir">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <font>
-                        <Font size="14.0" />
-                     </font></JFXButton>
-               </children>
-               <VBox.margin>
-                  <Insets left="70.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label text="Añadirlo a un grupo">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets left="10.0" />
-                     </HBox.margin>
-                  </Label>
-               </children>
-               <VBox.margin>
-                  <Insets left="70.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <JFXComboBox fx:id="comboBGrupos" promptText="Grupos disponibles">
-                     <HBox.margin>
-                        <Insets left="10.0" />
-                     </HBox.margin>
-                  </JFXComboBox>
-                  <JFXButton fx:id="btnAnadirGrupo" onAction="#anadirGrupo" text="Añadir">
-                     <HBox.margin>
-                        <Insets left="50.0" right="50.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </JFXButton>
-               </children>
-               <VBox.margin>
-                  <Insets left="70.0" />
-               </VBox.margin>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0" spacing="50.0">
-               <children>
-                  <JFXButton fx:id="btnCrearContacto" onAction="#crearContacto" prefHeight="30.0" prefWidth="118.0" text="Crear contacto">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton fx:id="btnVolver" onAction="#cerrarVenanaVolver" prefHeight="30.0" prefWidth="69.0" text="Volver">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </JFXButton>
-               </children>
-               <padding>
-                  <Insets left="600.0" />
-               </padding>
-            </HBox>
-         </children>
-      </VBox>
+      <Label text="Añadir contacto">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="nombre" layoutX="34.0" layoutY="125.0" promptText="Nombre" />
+      <JFXTextField fx:id="apellido" layoutX="258.0" layoutY="125.0" promptText="Apellido" />
+      <Label layoutX="33.0" layoutY="180.0" text="Añadir Telefonos">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="numero" layoutX="253.0" layoutY="235.0" promptText="Telefono">
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </JFXTextField>
+      <JFXTextField fx:id="etiquetaTelefono" layoutX="-16.0" layoutY="234.0" promptText="Etiqueta">
+         <padding>
+            <Insets left="50.0" right="50.0" />
+         </padding>
+      </JFXTextField>
+      <JFXButton fx:id="btnAnadirTelefono" layoutX="463.0" layoutY="230.0" onAction="#anadirTelefono" text="Añadir">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="32.0" layoutY="293.0" text="Añadir E-mails">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </Label>
+      <JFXTextField fx:id="correo" layoutX="248.0" layoutY="355.0" promptText="E-mail" />
+      <JFXTextField fx:id="etiquetaCorreo" layoutX="38.0" layoutY="350.0" promptText="Etiqueta" />
+      <JFXButton fx:id="btnAnadirCorreo" layoutX="463.0" layoutY="356.0" onAction="#anadirCorreo" text="Añadir">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="32.0" layoutY="440.0" text="Añadirlo a un grupo">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="comboBGrupos" layoutX="32.0" layoutY="506.0" promptText="Grupos disponibles" />
+      <JFXButton fx:id="btnAnadirGrupo" layoutX="302.0" layoutY="522.0" onAction="#anadirGrupo" text="Añadir">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnCrearContacto" layoutX="726.0" layoutY="590.0" onAction="#crearContacto" prefHeight="30.0" prefWidth="118.0" text="Crear contacto">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnVolver" layoutX="866.0" layoutY="590.0" onAction="#cerrarVenanaVolver" prefHeight="30.0" prefWidth="69.0" text="Volver">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TableView fx:id="tableTelefono" layoutX="600.0" layoutY="47.0" prefHeight="419.0" prefWidth="233.0">
+        <columns>
+          <TableColumn fx:id="etiquetaTelCol" prefWidth="96.0" text="Etiqueta" />
+          <TableColumn fx:id="TelCol" prefWidth="136.0" text="Telefono" />
+        </columns>
+      </TableView>
+      <TableView fx:id="emailTable" layoutX="834.0" layoutY="47.0" prefHeight="419.0" prefWidth="223.0">
+        <columns>
+          <TableColumn fx:id="etiquetacorreoCol" prefWidth="119.0" text="Etiqueta" />
+          <TableColumn fx:id="correoCol" prefWidth="128.0" text="Correo" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tablaGrupo" layoutX="1056.0" layoutY="46.0" prefHeight="419.0" prefWidth="144.0">
+        <columns>
+          <TableColumn fx:id="grupoCol" prefWidth="143.0" text="Grupo" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

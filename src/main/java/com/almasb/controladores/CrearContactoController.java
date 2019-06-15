@@ -16,6 +16,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -32,10 +35,10 @@ public class CrearContactoController implements Initializable {
     private TelefonosDao telefonosDao = new TelefonosDao();
     private EmailDao emailDao  = new EmailDao();
 
-    private ArrayList<Telefono> listaTelefonos;
-    private ArrayList<Email> listaEmail;
-    private ArrayList<String> listaGrupos;
-    private Contacto contacto;
+    private ArrayList<Telefono> listaTelefonos = new ArrayList<>();
+    private ArrayList<Email> listaEmail = new ArrayList<>();
+    private ArrayList<String> listaGrupos= new ArrayList<>();
+    private Contacto contacto = new Contacto();
     private Set<String> etiquetasEmailPosibles;
     private Set<String> etiquetasTelefonoPosibles;
 
@@ -75,6 +78,31 @@ public class CrearContactoController implements Initializable {
     @FXML
     private JFXButton btnVolver;
 
+    @FXML
+    private TableView<Email> emailTable;
+
+    @FXML
+    private TableColumn<Email, String> correoCol;
+
+    @FXML
+    private TableColumn<Email, String> etiquetacorreoCol;
+
+    @FXML
+    private TableView<Telefono> tableTelefono;
+
+    @FXML
+    private TableColumn<Telefono, Integer> TelCol;
+
+    @FXML
+    private TableColumn<Telefono, String> etiquetaTelCol;
+
+    @FXML
+    private TableView<Grupos> tablaGrupo;
+
+    @FXML
+    private TableColumn<GrupoContacto, String> grupoCol;
+
+
 
     @FXML
     void anadirCorreo(ActionEvent event) throws Exception{
@@ -92,6 +120,7 @@ public class CrearContactoController implements Initializable {
             }
             else {
                 listaEmail.add(email);
+                emailTable.getItems().add(email);
                 alert.setAlertType(Alert.AlertType.INFORMATION);
                 aviso[0] = "Grupo añadido";
                 aviso[1] = "Se ha añadido correctamente, sigue añadiendole e-mails si lo deseas";
@@ -114,12 +143,13 @@ public class CrearContactoController implements Initializable {
         String[] aviso = {"Grupo no añadido", "Ya no existen mas grupos creados"};
         if (!comboBGrupos.getSelectionModel().isEmpty()){
             Grupos grupo = new Grupos();
-            grupo.setNombre(comboBGrupos.getValue().toString());
+            grupo.setNombre(comboBGrupos.getValue());
 
             listaGrupos.add(grupo.getNombre());
+            tablaGrupo.getItems().add(grupo);
             comboBGrupos.getItems().remove(comboBGrupos.getValue());
             alert.setAlertType(Alert.AlertType.INFORMATION);
-            aviso[0] = "Grupo " + grupo.getNombre()+" añadido";
+            aviso[0] = "Grupo añadido";
             aviso[1] = "Se ha añadido correctamente, sigue añadiendole grupos si lo deseas";
 
         }
@@ -138,15 +168,16 @@ public class CrearContactoController implements Initializable {
             telefono.setNumero(Integer.parseInt(numero.getText()));
             telefono.setEtiquetaTelefono(etiquetaTelefono.getText());
             telefono.setId(contacto.getId());
-        if (existeTelefonoLista(listaTelefonos, telefono) || telefonosDao.existeTelefono(Integer.parseInt(numero.getText()))) {
-            aviso[1] = "Telefono ya existente";
-        }
-        else {
-            listaTelefonos.add(telefono);
-            alert.setAlertType(Alert.AlertType.INFORMATION);
-            aviso[0] = "Telefono añadido";
-            aviso[1] = "Se ha añadido correctamente, sigue añadiendole telefonos si lo deseas";
-        }
+            if (existeTelefonoLista(listaTelefonos, telefono) || telefonosDao.existeTelefono(Integer.parseInt(numero.getText()))) {
+                aviso[1] = "Telefono ya existente";
+            }
+            else {
+                listaTelefonos.add(telefono);
+                tableTelefono.getItems().add(telefono);
+                alert.setAlertType(Alert.AlertType.INFORMATION);
+                aviso[0] = "Telefono añadido";
+                aviso[1] = "Se ha añadido correctamente, sigue añadiendole telefonos si lo deseas";
+            }
 
         }
 
@@ -181,6 +212,7 @@ public class CrearContactoController implements Initializable {
             contacto.setGruposContacto(listaGrupos);
             contactosDao.anadirContacto(contacto);
             alert.setAlertType(Alert.AlertType.INFORMATION);
+            removeData();
             aviso[0]="Contacto añadido!";
             aviso[1]="Puedes seguir adiendo contactos";
         }
@@ -233,15 +265,77 @@ public class CrearContactoController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         List<Grupos> listaGrupos= gruposDao.getGrupos();
 
-        //Etiquetas disponibles
-        etiquetasTelefonoPosibles=telefonosDao.etiquetasTelefonosDisponibles();
-        etiquetasEmailPosibles=emailDao.etiquetasEmailDisponibles();
-
         ArrayList<String> aux = new ArrayList<String>();
         for(Grupos grupo : listaGrupos) aux.add(grupo.getNombre());
         ObservableList<String> listaGruposEncapsulados = FXCollections.observableArrayList(aux);
         this.comboBGrupos.setItems(listaGruposEncapsulados);
-        initListas();
+        initTable();
 
     }
+    private void initTable(){
+        initCols();
+        loadData();
+    }
+
+    private  void loadData(){
+        loadDataEmails();
+        loadDataGrupos();
+        loadDataTelefonos();
+    }
+
+
+    private void initCols(){
+        rellenarTablaTelefono();
+        rellenarTablaEmail();
+        rellenarTablaGrupos();
+    }
+
+    private void rellenarTablaTelefono(){
+        TelCol.setCellValueFactory(new PropertyValueFactory<>("numero"));
+        etiquetaTelCol.setCellValueFactory(new PropertyValueFactory<>("etiquetaTelefono"));
+    }
+
+    private void loadDataTelefonos(){
+        ArrayList<Telefono> listaTelefonos= telefonosDao.getTelefonosContacto(contacto.getId());
+        tableTelefono.getItems().addAll(listaTelefonos);
+    }
+
+    private void rellenarTablaEmail(){
+        correoCol.setCellValueFactory(new PropertyValueFactory<>("correo"));
+        etiquetacorreoCol.setCellValueFactory(new PropertyValueFactory<>("etiquetaEmail"));
+
+    }
+    private void loadDataEmails(){
+        ArrayList<Email> listaEmails= emailDao.getEmailsContacto(contacto.getId());
+        emailTable.getItems().addAll(listaEmails);
+    }
+
+    private void rellenarTablaGrupos(){
+        grupoCol.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+    }
+    private void loadDataGrupos(){
+        contacto.getGruposContacto();
+        tablaGrupo.getItems().addAll();
+    }
+    private void removeData(){
+        borrarDatosTablaEmail();
+        borrarDatosTablaGrupos();
+        borrarDatosTablaTelefono();
+    }
+    private void borrarDatosTablaTelefono(){
+        while(tableTelefono.getItems().size()!=0) {
+            tableTelefono.getItems().remove(0);
+        }
+    }
+    private void borrarDatosTablaEmail(){
+        while(emailTable.getItems().size()!=0) {
+            emailTable.getItems().remove(0);
+        }
+    }
+    private void borrarDatosTablaGrupos(){
+        while(tablaGrupo.getItems().size()!=0) {
+            tablaGrupo.getItems().remove(0);
+        }
+    }
+
 }
